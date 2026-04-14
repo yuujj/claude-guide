@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:claude.com)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:herothemes.com)",
+      "WebFetch(domain:platform.openai.com)",
+      "WebFetch(domain:www.anthropic.com)",
+      "WebFetch(domain:www.aiuxdesign.guide)",
+      "WebFetch(domain:support.claude.com)",
+      "WebFetch(domain:www.nocode.mba)",
+      "WebFetch(domain:dev.to)",
+      "WebFetch(domain:scottspence.com)"
+    ]
+  }
+}
