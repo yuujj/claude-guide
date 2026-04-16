@@ -1,0 +1,50 @@
+/* ============================================================
+   PLACEHOLDER — 준비 중 섹션 (사선 패턴)
+   ============================================================ */
+
+.placeholder-section {
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-12) var(--space-8);
+  text-align: center;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    var(--color-bg-section-alt) 10px,
+    var(--color-bg-section-alt) 20px
+  );
+  transition: border-color var(--transition-normal),
+              background-color var(--transition-normal);
+}
+
+.placeholder-section:hover {
+  border-color: var(--color-brand-coral-light);
+}
+
+.placeholder-section__title {
+  font-size: var(--text-h3);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.placeholder-section__desc {
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+}
+
+.placeholder-section__badge {
+  display: inline-block;
+  margin-bottom: var(--space-3);
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-label);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  background: var(--color-cream-400);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-full);
+}
+
+[data-theme="dark"] .placeholder-section__badge {
+  background: var(--color-dark-700);
+}

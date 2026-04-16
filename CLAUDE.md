@@ -6,7 +6,7 @@
 
 - **순수 HTML/CSS/JS** (빌드 도구 없음, ES Modules)
 - **GitHub Pages 배포**: branch `main` / root `/` (Actions 불필요)
-- **청중 이중화**: 일반 사용자 / 개발자 — 같은 페이지에서 탭+배지로 분기
+- **청중 적응**: 이진 선택 없이 적응형 컴포넌트(용어 툴팁, depth 배지, 사이드바 ToC)로 대응 (ADR-001)
 - **탐색형 구조**: Hub-and-Spoke 네비게이션, 점층적 공개(disclosure)
 
 ## 로컬 확인

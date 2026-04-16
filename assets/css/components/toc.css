@@ -1,0 +1,175 @@
+/* ============================================================
+   TOC — 사이드바 목차 (ADR-001)
+   데스크탑: sticky 사이드바 / 모바일: sticky 드롭다운
+   ============================================================ */
+
+/* ── Page Layout with ToC ─────────────────────────────────── */
+.page-with-toc {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--space-8);
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+/* ── Desktop Sidebar ToC ──────────────────────────────────── */
+.toc {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-6));
+  align-self: start;
+  max-height: calc(100vh - var(--nav-height) - var(--space-12));
+  overflow-y: auto;
+  padding-right: var(--space-4);
+  scrollbar-width: thin;
+}
+
+.toc__title {
+  font-size: var(--text-label);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.toc__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  border-left: 1px solid var(--color-border);
+  padding-left: var(--space-4);
+}
+
+.toc__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) 0;
+  font-size: var(--text-caption);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  position: relative;
+  line-height: var(--leading-snug);
+}
+
+.toc__item:hover {
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.toc__item.is-active {
+  color: var(--color-accent);
+  font-weight: var(--weight-semibold);
+}
+
+.toc__item.is-active::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-4) - 1px);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-accent);
+  border-radius: var(--radius-full);
+}
+
+.toc__item .badge {
+  font-size: 0.6875rem;
+  padding: 1px 6px;
+  flex-shrink: 0;
+}
+
+/* ── Mobile ToC Dropdown ──────────────────────────────────── */
+.toc-mobile {
+  display: none;
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 50;
+  background: color-mix(in srgb, var(--color-bg-page) 95%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-2) var(--container-pad);
+}
+
+.toc-mobile__btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  color: var(--color-accent);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: left;
+}
+
+.toc-mobile__btn svg {
+  width: 14px;
+  height: 14px;
+  margin-left: auto;
+  flex-shrink: 0;
+  transition: transform var(--transition-normal);
+}
+
+.toc-mobile__btn.is-open svg {
+  transform: rotate(180deg);
+}
+
+.toc-mobile__label {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.toc-mobile__dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: var(--container-pad);
+  right: var(--container-pad);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-2);
+  z-index: 51;
+}
+
+.toc-mobile__dropdown.is-open {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.toc-mobile__dropdown .toc__item {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-xs);
+}
+
+.toc-mobile__dropdown .toc__item:hover {
+  background: var(--color-brand-coral-faint);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .page-with-toc {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .toc {
+    display: none;
+  }
+
+  .toc-mobile {
+    display: block;
+  }
+}

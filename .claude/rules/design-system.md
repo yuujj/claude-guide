@@ -51,6 +51,8 @@ paths:
 | 코드 블록 | bg `#1e1e24`, 복사 버튼 우상단, 언어 헤더 |
 | placeholder | 점선 보더 + 사선 gradient 배경 |
 | 배지 | 일반(민트 `#e8f4f0`), 개발자(인디고 `#eef2ff`), 플랫폼(크림) |
+| 용어 툴팁 | 점선 밑줄 `1.5px dotted var(--color-accent)`, cursor help. 팝오버: card 배경 + shadow-md + radius-sm. 모바일 탭 토글 |
+| 사이드바 ToC | sticky, IntersectionObserver 현재 섹션 하이라이트. `[고급]` 배지(인디고) 표시. 모바일: sticky 드롭다운 전환 |
 
 ## 인터랙션
 

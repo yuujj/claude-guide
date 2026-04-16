@@ -1,0 +1,81 @@
+/* ============================================================
+   DECISION CARD — "뭘 하고 싶은지 모르겠다면" 3행 의사결정 가이드
+   ============================================================ */
+
+.decision-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.decision-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-5) var(--space-6);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--color-text-primary);
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal),
+    border-color var(--transition-normal),
+    background-color var(--transition-normal);
+}
+
+.decision-card:hover {
+  transform: translateX(4px);
+  border-color: var(--color-brand-coral);
+  background: var(--color-brand-coral-faint);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
+
+.decision-card__emoji {
+  font-size: 2rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.decision-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.decision-card__body strong {
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-snug);
+}
+
+.decision-card__cta {
+  flex-shrink: 0;
+  pointer-events: none; /* 카드 전체가 링크이므로 */
+}
+
+/* 모바일: 세로 정렬 */
+@media (max-width: 560px) {
+  .decision-card {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .decision-card__emoji {
+    font-size: 1.75rem;
+  }
+
+  .decision-card__body {
+    flex-basis: calc(100% - 2.75rem);
+  }
+
+  .decision-card__cta {
+    margin-left: calc(1.75rem + var(--space-3));
+  }
+}

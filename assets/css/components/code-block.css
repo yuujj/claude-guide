@@ -1,0 +1,79 @@
+/* ============================================================
+   CODE BLOCK — 다크 배경 + 복사 버튼
+   ============================================================ */
+
+.code-block {
+  background: var(--color-code-bg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+}
+
+.code-block__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-4);
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.code-block__lang {
+  font-size: var(--text-label);
+  color: var(--color-dark-200);
+  font-family: var(--font-mono);
+}
+
+.code-block__copy {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--text-label);
+  color: var(--color-dark-200);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: color var(--transition-fast),
+              border-color var(--transition-fast),
+              background-color var(--transition-fast);
+  font-family: var(--font-mono);
+}
+
+.code-block__copy:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.code-block__copy svg {
+  width: 12px;
+  height: 12px;
+}
+
+.code-block pre {
+  padding: var(--space-4);
+  margin: 0;
+}
+
+.code-block code {
+  font-size: var(--text-code);
+  color: var(--color-code-text);
+  line-height: var(--leading-code);
+  font-family: var(--font-mono);
+}
+
+/* 인라인 코드 (prose 외부) */
+code.inline {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--color-cream-300);
+  padding: 0.1em 0.4em;
+  border-radius: var(--radius-xs);
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] code.inline {
+  background: var(--color-dark-700);
+}

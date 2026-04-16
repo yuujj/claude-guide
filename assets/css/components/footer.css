@@ -1,0 +1,33 @@
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer {
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-12);
+  text-align: center;
+  background: var(--color-bg-card);
+  margin-top: var(--space-16);
+}
+
+.footer p {
+  font-size: var(--text-caption);
+  color: var(--color-text-muted);
+}
+
+.footer a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-xs);
+  transition: color var(--transition-fast);
+}
+
+.footer a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.footer p + p {
+  margin-top: var(--space-3);
+}

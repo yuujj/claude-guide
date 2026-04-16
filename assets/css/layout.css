@@ -10,15 +10,18 @@
   padding-inline: var(--container-pad);
 }
 
-.container--sm  { max-width: var(--container-sm); }
-.container--md  { max-width: var(--container-md); }
-.container--lg  { max-width: var(--container-lg); }
+.container--sm      { max-width: var(--container-sm); }    /* 640 */
+.container--md      { max-width: var(--container-md); }    /* 768 */
+.container--lg      { max-width: var(--container-lg); }    /* 1024 */
+.container--narrow  { max-width: 800px; }                  /* 본문·읽기 섹션 */
+.container--reading { max-width: 680px; }                  /* 긴 텍스트 단일 열 */
 
 /* ── Section ─────────────────────────────────────────────── */
 .section {
   padding-block: var(--section-padding-y);
 }
 
+/* 섹션 배경 변형 — 경계가 자연스럽게 느껴지도록 상하 보더 없이 배경만 교체 */
 .section--alt {
   background-color: var(--color-bg-section-alt);
 }
@@ -30,6 +33,17 @@
 .section--dark {
   background-color: var(--color-dark-900);
   color: var(--color-text-inverse);
+}
+
+/* 섹션 안에서 폭이 좁은 블록 정렬 — 인라인 max-width 제거용 */
+.section__narrow {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.section__reading {
+  max-width: 680px;
+  margin-inline: auto;
 }
 
 .section-header {

@@ -1,0 +1,28 @@
+/* ============================================================
+   HERO — 페이지 상단 히어로 섹션
+   ============================================================ */
+
+.hero {
+  padding-top: clamp(var(--space-12), 8vw, var(--space-20));
+  padding-bottom: clamp(var(--space-12), 8vw, var(--space-20));
+  text-align: center;
+}
+
+.hero__headline {
+  margin-bottom: var(--space-5);
+  max-width: 16ch;
+  margin-inline: auto;
+}
+
+.hero__sub {
+  max-width: 640px;
+  margin-inline: auto;
+  margin-bottom: var(--space-10);
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}

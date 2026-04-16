@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="클로드 코드 — AI에게 작업을 맡기는 도구">
+  <title>클로드 코드 — 클로드 가이드</title>
+
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved) document.documentElement.setAttribute('data-theme', saved);
+        else if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script type="module" src="../assets/js/main.js"></script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">본문으로 건너뛰기</a>
+
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href=".." class="nav__logo">
+      <span class="nav__logo-icon">C</span>
+      <span class="nav__logo-text">클로드 가이드</span>
+    </a>
+    <div class="nav__links">
+      <a href=".." class="nav__link">홈</a>
+      <a href="../claude-web/" class="nav__link">클로드 웹</a>
+      <a href="../claude-desktop/" class="nav__link">데스크탑</a>
+      <a href="../claude-code/" class="nav__link is-active">코드</a>
+      <a href="../tip/" class="nav__link">TIP</a>
+    </div>
+    <div class="nav__actions">
+      <button class="nav__icon-btn" id="theme-toggle" aria-label="테마 전환">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <button class="nav__hamburger hide-desktop" id="hamburger" aria-label="메뉴" aria-expanded="false">
+        <span class="nav__hamburger-bar"></span><span class="nav__hamburger-bar"></span><span class="nav__hamburger-bar"></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav__mobile-menu" id="mobile-menu">
+    <a href=".." class="nav__mobile-link">홈</a>
+    <a href="../claude-web/" class="nav__mobile-link">클로드 웹</a>
+    <a href="../claude-desktop/" class="nav__mobile-link">데스크탑</a>
+    <a href="../claude-code/" class="nav__mobile-link is-active">코드</a>
+    <a href="../tip/" class="nav__mobile-link">TIP</a>
+  </div>
+</nav>
+
+<main id="main">
+  <section class="hero container">
+    <h1 class="text-display hero__headline">클로드 코드</h1>
+    <p class="lead hero__sub">AI에게 작업을 맡기는 도구 — 파일을 직접 수정하고, 명령을 실행하고, 결과를 보여줍니다</p>
+    <div class="hero__actions">
+      <a href="https://claude.ai/code" class="btn btn--primary btn--lg">웹에서 바로 시작</a>
+      <a href=".." class="btn btn--ghost btn--lg">← 홈으로</a>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="placeholder-section">
+      <span class="placeholder-section__badge">준비 중</span>
+      <div class="placeholder-section__title">콘텐츠 준비 중</div>
+      <p class="placeholder-section__desc">
+        "이건 코딩 도구인가?" 해명, 시작하기(5가지 환경), 이런 걸 맡길 수 있어요, 핵심 기능, Cursor/Copilot 비교 섹션이 추가됩니다.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>이 사이트는 Anthropic 공식 사이트가 아닌 <strong>비공식 한국어 가이드</strong>입니다.</p>
+    <p>
+      <a href="https://github.com/yuujj/claude-guide">GitHub</a> ·
+      <a href="https://claude.ai">claude.ai</a> ·
+      <a href="../tip/">TIP</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
