@@ -82,17 +82,16 @@
 }
 
 @media (max-width: 1024px) {
+  .grid-3 { grid-template-columns: 1fr; }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 560px) {
-  .grid-2,
-  .grid-3,
-  .grid-4 { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
 }
 
 /* ── Flex Utilities ──────────────────────────────────────── */
@@ -142,10 +141,10 @@
   border-width: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hide-mobile { display: none; }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
   .hide-desktop { display: none; }
 }
