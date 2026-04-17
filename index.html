@@ -67,15 +67,15 @@
       </button>
     </div>
   </div>
-
-  <div class="nav__mobile-menu" id="mobile-menu">
-    <a href="." class="nav__mobile-link is-active">홈</a>
-    <a href="claude-web/" class="nav__mobile-link">클로드 웹</a>
-    <a href="claude-desktop/" class="nav__mobile-link">데스크탑</a>
-    <a href="claude-code/" class="nav__mobile-link">코드</a>
-    <a href="tip/" class="nav__mobile-link">TIP</a>
-  </div>
 </nav>
+
+<div class="nav__mobile-menu" id="mobile-menu">
+  <a href="." class="nav__mobile-link is-active">홈</a>
+  <a href="claude-web/" class="nav__mobile-link">클로드 웹</a>
+  <a href="claude-desktop/" class="nav__mobile-link">데스크탑</a>
+  <a href="claude-code/" class="nav__mobile-link">코드</a>
+  <a href="tip/" class="nav__mobile-link">TIP</a>
+</div>
 
 <main id="main">
 
@@ -84,7 +84,7 @@
     <h1 class="text-display hero__headline">클로드, 제대로 알고 쓰기</h1>
     <p class="lead hero__sub">대화부터 자동화까지 — 한국어로 탐험하세요</p>
     <div class="hero__actions">
-      <a href="#what-to-do" class="btn btn--primary btn--lg">뭘 할 수 있나요?</a>
+      <a href="#what-to-do" class="btn btn--primary btn--lg">제품 살펴보기</a>
       <a href="#about-claude" class="btn btn--secondary btn--lg">클로드란?</a>
     </div>
   </section>
@@ -131,194 +131,101 @@
       <div class="section-header--center">
         <span class="section-label">제품</span>
         <h2 class="text-h2">클로드를 쓰는 세 가지 방법</h2>
-        <p>어디서 시작할지 모르겠다면, 클로드 웹부터 시작하세요</p>
       </div>
 
       <div class="grid grid-3">
         <!-- 클로드 웹 -->
-        <div class="card card--product">
-          <div class="card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <article class="card card--product">
+          <div class="card__header">
+            <span class="pc__icon-emoji">🌐</span>
+            <div>
+              <h3 class="card__title">클로드 웹</h3>
+              <p class="card__subtitle">claude.ai · 브라우저에서 바로</p>
+            </div>
+          </div>
+          <div class="pc__usecase">
+            <span class="pc__usecase-label">💬 이럴 때 써요</span>
+            <p>AI에게 질문·분석·글쓰기를 맡기고 싶을 때 씁니다. 설치나 설정 없이 지금 바로 시작할 수 있습니다.</p>
           </div>
           <div>
-            <div class="card__title">클로드 웹</div>
-            <p class="card__subtitle">claude.ai · 설치 없이 바로 시작</p>
-            <p class="card__desc">질문하기, 글쓰기, 번역, 데이터 분석, 코드 생성 — 브라우저만 있으면 됩니다.</p>
+            <div class="pc__chips-label">핵심 기능</div>
+            <ul class="pc__chip-list">
+              <li>채팅</li>
+              <li>프로젝트</li>
+              <li><span class="term" data-def="클로드가 만든 코드, 문서, 다이어그램을 채팅 옆에 실시간으로 보여주는 기능" data-tip="artifact">아티팩트</span></li>
+              <li>웹 검색</li>
+              <li>메모리</li>
+            </ul>
           </div>
-          <p class="card__meta"><span class="card__meta--free">무료</span> · 가장 쉬움</p>
-          <p class="card__keywords">채팅 · 프로젝트 · <span class="term" data-def="클로드가 만든 코드, 문서, 다이어그램을 채팅 옆에 실시간으로 보여주는 기능" data-tip="artifact">아티팩트</span> · 웹 검색 · 메모리</p>
-          <a href="claude-web/" class="card__link">자세히 보기 <span aria-hidden="true">→</span></a>
-        </div>
+          <div class="pc__badges">
+            <span class="badge badge--general">무료 시작</span>
+            <span class="badge badge--new">설치 불필요</span>
+          </div>
+          <a href="claude-web/" class="card__link">시작하기 <span class="card__link-arrow" aria-hidden="true">→</span></a>
+        </article>
 
         <!-- 클로드 데스크탑 -->
-        <div class="card card--product">
-          <div class="card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 16 21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <article class="card card--product">
+          <div class="card__header">
+            <span class="pc__icon-emoji">🖥️</span>
+            <div>
+              <h3 class="card__title">클로드 데스크탑</h3>
+              <p class="card__subtitle">macOS · Windows · 네이티브 앱</p>
+            </div>
+          </div>
+          <div class="pc__usecase">
+            <span class="pc__usecase-label">📁 이럴 때 써요</span>
+            <p>내 파일·사내 도구를 AI에 직접 연결하거나, 앱을 자동 조작하고 싶을 때 씁니다.</p>
           </div>
           <div>
-            <div class="card__title">클로드 데스크탑</div>
-            <p class="card__subtitle">macOS · Windows · 네이티브 앱</p>
-            <p class="card__desc">웹의 모든 기능 + 내 컴퓨터 파일·DB·Slack을 AI에 직접 연결. 앱 조작 자동화도 가능합니다.</p>
+            <div class="pc__chips-label">핵심 기능</div>
+            <ul class="pc__chip-list">
+              <li>Chat</li>
+              <li>Code 탭</li>
+              <li><span class="term" data-def="AI가 화면을 보고 마우스/키보드로 앱을 직접 조작하는 기능" data-tip="cowork">Cowork</span></li>
+              <li><span class="term" data-def="AI가 외부 도구와 통신하는 개방형 표준 규격. USB처럼 꽂으면 연결됩니다." data-tip="mcp">MCP</span></li>
+              <li>커넥터</li>
+            </ul>
           </div>
-          <p class="card__meta"><span class="card__meta--free">기본 무료</span> · 내 환경 연결</p>
-          <p class="card__keywords"><span class="term" data-def="AI가 외부 도구와 통신하는 개방형 표준 규격. USB처럼 꽂으면 연결됩니다." data-tip="mcp">MCP</span> · 데스크탑 확장 · 커넥터 · <span class="term" data-def="AI가 화면을 보고 마우스/키보드로 앱을 직접 조작하는 기능" data-tip="cowork">Cowork</span></p>
-          <a href="claude-desktop/" class="card__link">자세히 보기 <span aria-hidden="true">→</span></a>
-        </div>
+          <div class="pc__badges">
+            <span class="badge badge--general">웹 기능 포함</span>
+            <span class="badge badge--dev">MCP · Cowork</span>
+          </div>
+          <a href="claude-desktop/" class="card__link">시작하기 <span class="card__link-arrow" aria-hidden="true">→</span></a>
+        </article>
 
         <!-- 클로드 코드 -->
-        <div class="card card--product">
-          <div class="card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <article class="card card--product">
+          <div class="card__header">
+            <span class="pc__icon-emoji">⚡</span>
+            <div>
+              <h3 class="card__title">클로드 코드</h3>
+              <p class="card__subtitle">터미널 · VS Code · Desktop Code탭</p>
+            </div>
+          </div>
+          <div class="pc__usecase">
+            <span class="pc__usecase-label">🤖 이럴 때 써요</span>
+            <p>AI가 파일을 직접 수정하거나 명령을 실행하게 하고 싶을 때 씁니다. 개발·자동화 모두 가능합니다.</p>
           </div>
           <div>
-            <div class="card__title">클로드 코드</div>
-            <p class="card__subtitle">터미널 · VS Code · 데스크탑 Code탭</p>
-            <p class="card__desc">파일 수정, 명령 실행, <span class="term" data-def="코드 변경 이력을 관리하는 버전 관리 도구" data-tip="git">git</span> 관리까지 — 자연어로 지시하면 AI가 직접 실행합니다.</p>
+            <div class="pc__chips-label">핵심 기능</div>
+            <ul class="pc__chip-list">
+              <li>파일 편집</li>
+              <li>명령 실행</li>
+              <li><span class="term" data-def="코드 변경 이력을 관리하는 버전 관리 도구" data-tip="git">git</span></li>
+              <li>서브에이전트</li>
+              <li>hooks</li>
+            </ul>
           </div>
-          <p class="card__meta"><span class="card__meta--pro">Pro 이상</span> · AI가 직접 실행</p>
-          <p class="card__keywords">파일 편집 · 명령 실행 · git · 서브에이전트 · 스케줄</p>
-          <a href="claude-code/" class="card__link">자세히 보기 <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ 뭘 하고 싶은지 모르겠다면 ═══ -->
-  <section class="section section--alt" id="which-tool">
-    <div class="container container--narrow">
-      <div class="section-header--center">
-        <span class="section-label">가이드</span>
-        <h2 class="text-h2">뭘 하고 싶은지 모르겠다면</h2>
+          <div class="pc__badges">
+            <span class="badge badge--dev">자동화</span>
+            <span class="badge badge--dev">5가지 환경</span>
+          </div>
+          <a href="claude-code/" class="card__link">시작하기 <span class="card__link-arrow" aria-hidden="true">→</span></a>
+        </article>
       </div>
 
-      <div class="decision-list">
-        <a href="claude-web/" class="decision-card">
-          <div class="decision-card__emoji" aria-hidden="true">💬</div>
-          <div class="decision-card__body">
-            <strong>AI에게 질문하거나, 글을 쓰거나, 분석을 맡기고 싶다</strong>
-            <span class="text-secondary text-caption">설치 없이 바로 가능</span>
-          </div>
-          <span class="btn btn--primary btn--sm decision-card__cta">클로드 웹</span>
-        </a>
-
-        <a href="claude-desktop/" class="decision-card">
-          <div class="decision-card__emoji" aria-hidden="true">📁</div>
-          <div class="decision-card__body">
-            <strong>내 파일이나 사내 도구를 AI가 직접 참조하게 하고 싶다</strong>
-            <span class="text-secondary text-caption">앱 설치 후 MCP/커넥터 연결</span>
-          </div>
-          <span class="btn btn--secondary btn--sm decision-card__cta">데스크탑</span>
-        </a>
-
-        <a href="claude-code/" class="decision-card">
-          <div class="decision-card__emoji" aria-hidden="true">⚡</div>
-          <div class="decision-card__body">
-            <strong>AI가 파일을 수정하거나 명령을 실행하게 하고 싶다</strong>
-            <span class="text-secondary text-caption">데스크탑 Code 탭 또는 터미널에서</span>
-          </div>
-          <span class="btn btn--secondary btn--sm decision-card__cta">클로드 코드</span>
-        </a>
-      </div>
-
-      <p class="text-center text-caption text-muted mt-8">
-          잘 모르겠다면 <strong>클로드 웹</strong>부터 시작하세요. 나중에 언제든 확장할 수 있습니다.
-        </p>
-    </div>
-  </section>
-
-  <!-- ═══ 가입하고 시작하기 ═══ -->
-  <section class="section" id="get-started">
-    <div class="container container--narrow">
-      <div class="section-header--center">
-        <span class="section-label">시작하기</span>
-        <h2 class="text-h2">가입하고 시작하기</h2>
-        <p>30초면 첫 대화를 시작할 수 있습니다</p>
-      </div>
-
-      <div class="tabs-wrapper">
-        <div class="tab-list" role="tablist">
-          <button class="tab-btn" role="tab" aria-selected="true" aria-controls="p-web" id="t-web" tabindex="0">웹에서 바로</button>
-          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="p-desktop" id="t-desktop" tabindex="-1">데스크탑 앱</button>
-          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="p-cli" id="t-cli" tabindex="-1">터미널 CLI</button>
-        </div>
-
-        <div class="tab-panel" role="tabpanel" id="p-web" aria-labelledby="t-web">
-          <div class="flex-col gap-6">
-            <div class="step-item">
-              <span class="step-num">1</span>
-              <div class="step-item__body"><strong>claude.ai 접속</strong><br><span class="text-secondary">브라우저에서 바로 접속 — 설치 불필요</span></div>
-            </div>
-            <div class="step-item">
-              <span class="step-num">2</span>
-              <div class="step-item__body"><strong>무료 계정 만들기</strong><br><span class="text-secondary">이메일 주소만 있으면 됩니다</span></div>
-            </div>
-            <div class="step-item">
-              <span class="step-num">3</span>
-              <div class="step-item__body"><strong>대화 시작</strong><br><span class="text-secondary">"오늘 회의 내용을 요약해줘"처럼 자연어로 질문하세요</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-panel" role="tabpanel" id="p-desktop" aria-labelledby="t-desktop" hidden>
-          <div class="flex-col gap-6">
-            <div class="step-item">
-              <span class="step-num">1</span>
-              <div class="step-item__body"><strong>앱 다운로드</strong><br><span class="text-secondary">claude.ai에서 macOS / Windows용 앱을 다운로드하세요</span></div>
-            </div>
-            <div class="step-item">
-              <span class="step-num">2</span>
-              <div class="step-item__body"><strong>설치 후 로그인</strong><br><span class="text-secondary">claude.ai 계정으로 로그인합니다</span></div>
-            </div>
-            <div class="step-item">
-              <span class="step-num">3</span>
-              <div class="step-item__body"><strong>Chat / Code / Cowork</strong><br><span class="text-secondary">세 가지 탭을 모두 사용할 수 있습니다</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-panel" role="tabpanel" id="p-cli" aria-labelledby="t-cli" hidden>
-          <div class="flex-col gap-6">
-            <div class="step-item">
-              <span class="step-num">1</span>
-              <div class="step-item__body">
-                <strong>설치</strong>
-                <div class="code-block mt-4">
-                  <div class="code-block__header">
-                    <span class="code-block__lang">bash</span>
-                    <button class="code-block__copy" type="button">복사</button>
-                  </div>
-                  <pre><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre>
-                </div>
-              </div>
-            </div>
-            <div class="step-item">
-              <span class="step-num">2</span>
-              <div class="step-item__body">
-                <strong>프로젝트에서 실행</strong>
-                <div class="code-block mt-4">
-                  <div class="code-block__header">
-                    <span class="code-block__lang">bash</span>
-                    <button class="code-block__copy" type="button">복사</button>
-                  </div>
-                  <pre><code>cd my-project && claude</code></pre>
-                </div>
-              </div>
-            </div>
-            <div class="step-item">
-              <span class="step-num">3</span>
-              <div class="step-item__body">
-                <strong>자연어로 지시</strong>
-                <div class="code-block mt-4">
-                  <div class="code-block__header">
-                    <span class="code-block__lang">prompt</span>
-                  </div>
-                  <pre><code>"이 폴더의 CSV 파일을 모두 합쳐줘"</code></pre>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <p class="pc-hint">잘 모르겠다면 <strong>클로드 웹</strong>부터 시작하세요. 나중에 언제든 확장할 수 있습니다.</p>
     </div>
   </section>
 

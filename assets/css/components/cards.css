@@ -266,3 +266,82 @@
   color: var(--color-text-secondary);
   line-height: var(--leading-normal);
 }
+
+/* ── Product Card 확장 — 통합 3렌즈 서브요소 ─────────────── */
+.pc__icon-emoji {
+  font-size: 1.75rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.pc__usecase {
+  background: var(--color-brand-coral-faint);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+}
+
+[data-theme="dark"] .pc__usecase {
+  background: rgba(218, 119, 86, 0.12);
+}
+
+.pc__usecase-label {
+  display: block;
+  font-size: var(--text-label);
+  font-weight: var(--weight-semibold);
+  color: var(--color-brand-coral-dark);
+  margin-bottom: 4px;
+}
+
+[data-theme="dark"] .pc__usecase-label {
+  color: var(--color-brand-coral-light);
+}
+
+.pc__usecase p {
+  font-size: var(--text-body-sm);
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: var(--leading-relaxed);
+}
+
+.pc__chips-label {
+  font-size: var(--text-label);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: var(--space-2);
+}
+
+.pc__chip-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pc__chip-list li {
+  font-size: var(--text-label);
+  background: var(--color-cream-100);
+  border: 1px solid var(--color-border);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  color: var(--color-text-secondary);
+}
+
+[data-theme="dark"] .pc__chip-list li {
+  background: var(--color-dark-800);
+}
+
+.pc__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pc-hint {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--text-body-sm);
+  margin-top: var(--space-8);
+}

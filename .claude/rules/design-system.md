@@ -50,9 +50,13 @@ paths:
 | disclosure | max-height 애니메이션, `aria-expanded` |
 | 코드 블록 | bg `#1e1e24`, 복사 버튼 우상단, 언어 헤더 |
 | placeholder | 점선 보더 + 사선 gradient 배경 |
-| 배지 | 일반(민트 `#e8f4f0`), 개발자(인디고 `#eef2ff`), 플랫폼(크림) |
+| 배지 | 일반/비개발자(민트 `#e8f4f0`), 개발자/고급/하네스(인디고 `#eef2ff`), 신규(앰버), 플랫폼(크림) |
+| 난이도 점 | 기초 🟢 `#10b981` / 중간 🟡 `#f59e0b` / 고급 🔵 `#3730a3` — `scenario` 레일에서 사용. `[고급]` 배지 인디고와 통일된 톤 |
 | 용어 툴팁 | 점선 밑줄 `1.5px dotted var(--color-accent)`, cursor help. 팝오버: card 배경 + shadow-md + radius-sm. 모바일 탭 토글 |
 | 사이드바 ToC | sticky, IntersectionObserver 현재 섹션 하이라이트. `[고급]` 배지(인디고) 표시. 모바일: sticky 드롭다운 전환 |
+| 시작 포인터 카드 | 홈 `#get-started` 3열 그리드. `label` + `title(→)` + `hint` 3줄 구성. hover → translateY(-2px) + 코랄 보더. 모바일 1열 |
+| example-card (웹) | 아이콘 + 제목 + 설명 + **코랄 좌측 보더(3px)의 이탤릭 프롬프트 인용**. auto-fit min 280px. 자연어 프롬프트는 따옴표 인용으로 시각적 구분 |
+| scenario (코드) | 좌측 난이도 레일(🟢🟡🔵 점 + 기초/중간/고급 라벨) + 제목 옆 배지(`비개발자`/`개발자`/`하네스`) + **터미널 풍 코드블록 프롬프트**. 모바일에서 레일 → 상단 수평 전환 |
 
 ## 인터랙션
 

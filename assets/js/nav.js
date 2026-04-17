@@ -29,19 +29,27 @@ export function initNav() {
 
   // 햄버거 메뉴 토글
   if (hamburger && mobileMenu) {
+    const setOpen = (open) => {
+      hamburger.classList.toggle('is-open', open);
+      mobileMenu.classList.toggle('is-open', open);
+      document.body.classList.toggle('nav-menu-open', open);
+      hamburger.setAttribute('aria-expanded', String(open));
+    };
+
     hamburger.addEventListener('click', () => {
-      const isOpen = hamburger.classList.toggle('is-open');
-      mobileMenu.classList.toggle('is-open', isOpen);
-      hamburger.setAttribute('aria-expanded', String(isOpen));
+      setOpen(!hamburger.classList.contains('is-open'));
     });
 
     // 모바일 링크 클릭 시 메뉴 닫기
     mobileMenu.querySelectorAll('.nav__mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('is-open');
-        mobileMenu.classList.remove('is-open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', () => setOpen(false));
+    });
+
+    // ESC 로 닫기
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && hamburger.classList.contains('is-open')) {
+        setOpen(false);
+      }
     });
   }
 }
