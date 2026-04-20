@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="클로드 데스크탑 — Chat, Code, Cowork 세 가지 도구를 한 곳에서">
+  <meta name="description" content="클로드 데스크탑 — 내 환경과 AI를 연결하는 네이티브 앱. Chat, Code, Cowork 세 가지 도구를 한 곳에서. MCP, 커넥터, 데스크탑 확장 한국어 가이드.">
   <title>클로드 데스크탑 — 클로드 가이드</title>
 
   <script>
@@ -28,6 +28,9 @@
 
 <a href="#main" class="skip-link">본문으로 건너뛰기</a>
 
+<!-- ═══════════════════════════════════════════════════════════
+     NAV
+     ═══════════════════════════════════════════════════════════ -->
 <nav class="nav" id="nav">
   <div class="nav__inner">
     <a href=".." class="nav__logo">
@@ -47,7 +50,9 @@
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
       </button>
       <button class="nav__hamburger hide-desktop" id="hamburger" aria-label="메뉴" aria-expanded="false">
-        <span class="nav__hamburger-bar"></span><span class="nav__hamburger-bar"></span><span class="nav__hamburger-bar"></span>
+        <span class="nav__hamburger-bar"></span>
+        <span class="nav__hamburger-bar"></span>
+        <span class="nav__hamburger-bar"></span>
       </button>
     </div>
   </div>
@@ -62,26 +67,341 @@
 </div>
 
 <main id="main">
+
+  <!-- ═══ HERO ═══ -->
   <section class="hero container">
     <h1 class="text-display hero__headline">클로드 데스크탑</h1>
-    <p class="lead hero__sub">내 환경과 AI를 연결하는 네이티브 앱 — Chat, Code, Cowork 세 가지 도구를 한 곳에서</p>
+    <p class="lead hero__sub">내 환경과 AI를 연결하는 네이티브 앱 — Chat, Code, Cowork 세 가지 도구를 한 곳에서.</p>
     <div class="hero__actions">
-      <a href="https://claude.ai/download" class="btn btn--primary btn--lg">다운로드</a>
-      <a href=".." class="btn btn--ghost btn--lg">← 홈으로</a>
+      <a href="https://claude.ai/download" class="btn btn--primary btn--lg">데스크탑 다운로드</a>
+      <a href="#start" class="btn btn--secondary btn--lg">시작하기 안내</a>
     </div>
   </section>
 
-  <section class="section container">
-    <div class="placeholder-section">
-      <span class="placeholder-section__badge">준비 중</span>
-      <div class="placeholder-section__title">콘텐츠 준비 중</div>
-      <p class="placeholder-section__desc">
-        시작하기, 세 가지 탭(Chat/Code/Cowork), MCP 연결, 데스크탑 확장, 활용 예시 섹션이 추가됩니다.
-      </p>
+  <!-- ═══ MOBILE TOC ═══ -->
+  <div class="toc-mobile" id="toc-mobile">
+    <button class="toc-mobile__btn" id="toc-mobile-btn" aria-expanded="false" aria-controls="toc-mobile-dropdown">
+      <span class="toc-mobile__label" id="toc-mobile-label">이 페이지 목차</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="toc-mobile__dropdown" id="toc-mobile-dropdown" role="navigation" aria-label="페이지 목차">
+      <a href="#start" class="toc__item">시작하기</a>
+      <a href="#setup" class="toc__item">나만의 세팅하기</a>
+      <a href="#tabs" class="toc__item">세 가지 탭</a>
+      <a href="#features" class="toc__item">핵심 기능 <span class="badge badge--dev">고급</span></a>
+      <a href="#next" class="toc__item">다음 단계</a>
     </div>
-  </section>
+  </div>
+
+  <!-- ═══ PAGE WITH TOC ═══ -->
+  <div class="page-with-toc">
+
+    <!-- Sidebar ToC (desktop only) -->
+    <aside class="toc" aria-label="페이지 목차">
+      <div class="toc__title">목차</div>
+      <nav class="toc__list">
+        <a href="#start" class="toc__item">시작하기</a>
+        <a href="#setup" class="toc__item">나만의 세팅하기</a>
+        <a href="#tabs" class="toc__item">세 가지 탭</a>
+        <a href="#features" class="toc__item">핵심 기능 <span class="badge badge--dev">고급</span></a>
+        <a href="#next" class="toc__item">다음 단계</a>
+      </nav>
+    </aside>
+
+    <!-- Content -->
+    <div>
+
+      <!-- ═══ [1] 시작하기 ═══ -->
+      <section class="section" id="start">
+        <span class="section-label">시작</span>
+        <h2 class="text-h2 mb-4">시작하기</h2>
+
+        <div class="badge-group mb-6">
+          <span class="badge badge--platform">macOS · Windows</span>
+          <span class="badge badge--general">웹 기능 포함</span>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:var(--space-6)">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-item__body">
+              <strong>Claude Desktop 다운로드</strong>
+              <p class="text-secondary text-body-sm mt-2">Anthropic 공식 사이트(<a href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a>)에서 macOS 또는 Windows 설치 파일을 내려받아 실행합니다.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-item__body">
+              <strong>계정 로그인</strong>
+              <p class="text-secondary text-body-sm mt-2">앱을 열면 Anthropic 계정으로 로그인합니다. claude.ai와 같은 계정을 사용합니다.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-item__body">
+              <strong>탭 선택 후 시작</strong>
+              <p class="text-secondary text-body-sm mt-2">Chat, Code, Cowork 중 원하는 탭을 선택합니다. 처음이라면 Chat 탭부터 시작하세요.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ [2] 나만의 세팅하기 ═══ -->
+      <section class="section" id="setup" style="border-top:1px solid var(--color-border)">
+        <span class="section-label">세팅</span>
+        <h2 class="text-h2 mb-4">나만의 세팅하기</h2>
+        <p class="text-body-lg mb-8">클로드 데스크탑은 웹의 모든 세팅에 더해, 내 환경과 직접 연결하는 방법을 제공합니다.</p>
+
+        <div style="overflow-x:auto;margin-bottom:var(--space-6)">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>세팅</th><th>방법</th><th>난이도</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Chat 세팅 (프로젝트·스타일·메모리)</strong></td>
+                <td>웹과 동일 — <a href="../claude-web/">웹 가이드 참조</a></td>
+                <td><span class="badge badge--general">쉬움</span></td>
+              </tr>
+              <tr>
+                <td><strong>커넥터</strong></td>
+                <td>설정 → 연결 → 서비스 선택 → 승인</td>
+                <td><span class="badge badge--general">쉬움</span></td>
+              </tr>
+              <tr>
+                <td><strong>데스크탑 확장 (.mcpb)</strong></td>
+                <td>.mcpb 파일 더블클릭 → 설치</td>
+                <td><span class="badge badge--general">쉬움</span></td>
+              </tr>
+              <tr>
+                <td><strong>MCP 서버 직접 설정</strong></td>
+                <td>claude_desktop_config.json 편집</td>
+                <td><span class="badge badge--dev">고급</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- disclosure: MCP 서버 직접 설정 예시 -->
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false" aria-controls="disclosure-mcp-config">
+            <svg class="disclosure__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            MCP 서버 직접 설정 예시 <span class="badge badge--dev">고급</span>
+          </button>
+          <div class="disclosure__content" id="disclosure-mcp-config">
+            <div class="disclosure__inner">
+              <p class="text-body-sm mb-4">
+                <span class="term" data-def="AI가 외부 도구와 통신하는 개방형 표준 규격" data-tip="mcp">MCP</span> 서버를 직접 설정하려면 <code class="inline">claude_desktop_config.json</code> 파일을 편집합니다.
+              </p>
+              <div class="code-block mb-4">
+                <div class="code-block__header">
+                  <span class="code-block__lang">json · claude_desktop_config.json</span>
+                </div>
+                <pre><code>{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": { "GITHUB_TOKEN": "ghp_여기에_토큰_입력" }
+    }
+  }
+}</code></pre>
+              </div>
+              <p class="text-body-sm text-secondary">
+                파일 위치:<br>
+                macOS: <code class="inline">~/Library/Application Support/Claude/claude_desktop_config.json</code><br>
+                Windows: <code class="inline">%APPDATA%\Claude\claude_desktop_config.json</code>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ [3] 세 가지 탭 ═══ -->
+      <section class="section" id="tabs" style="border-top:1px solid var(--color-border)">
+        <span class="section-label">탭</span>
+        <h2 class="text-h2 mb-4">세 가지 탭</h2>
+        <p class="text-body-lg mb-8">클로드 데스크탑은 Chat, Code, Cowork 세 탭을 통해 서로 다른 작업을 지원합니다.</p>
+
+        <div class="tabs-wrapper">
+          <div class="tab-list" role="tablist" aria-label="탭 선택">
+            <button class="tab-btn" role="tab" aria-selected="true" aria-controls="tab-chat" id="tab-btn-chat">Chat</button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-code" id="tab-btn-code">Code</button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-cowork" id="tab-btn-cowork">Cowork</button>
+          </div>
+
+          <!-- Chat 탭 -->
+          <div class="tab-panel" id="tab-chat" role="tabpanel" aria-labelledby="tab-btn-chat">
+            <div class="badge-group mb-6">
+              <span class="badge badge--general">웹 기능 포함</span>
+            </div>
+            <p class="text-body-lg mb-4">웹(claude.ai)의 모든 기능을 데스크탑 앱에서 그대로 사용합니다. 프로젝트, 아티팩트, 메모리, 웹 검색이 모두 동작합니다.</p>
+            <p class="text-body-sm text-secondary">Chat 기능 상세는 → <a href="../claude-web/">클로드 웹 가이드</a></p>
+          </div>
+
+          <!-- Code 탭 -->
+          <div class="tab-panel" id="tab-code" role="tabpanel" aria-labelledby="tab-btn-code" hidden>
+            <div class="badge-group mb-6">
+              <span class="badge badge--dev">Pro 이상</span>
+              <span class="badge badge--platform">클로드 코드와 동일</span>
+            </div>
+            <p class="text-body-lg mb-4">클로드 코드의 GUI 버전입니다. 프로젝트 폴더를 열거나 끌어다 놓으면 AI가 파일을 직접 읽고, 수정하고, git 작업을 처리합니다. 터미널 없이 코드 작업을 맡길 수 있습니다.</p>
+            <p class="text-body-sm text-secondary">Code 탭 기능 상세는 → <a href="../claude-code/">클로드 코드 가이드</a></p>
+          </div>
+
+          <!-- Cowork 탭 -->
+          <div class="tab-panel" id="tab-cowork" role="tabpanel" aria-labelledby="tab-btn-cowork" hidden>
+            <div class="badge-group mb-6">
+              <span class="badge badge--dev">Pro 이상</span>
+              <span class="badge badge--dev">고급</span>
+            </div>
+            <p class="text-body-lg mb-4">AI가 화면을 직접 보고 마우스와 키보드로 앱을 조작합니다. 반복적인 GUI 작업 — 폼 작성, 스크린샷 캡처, 특정 앱 조작 — 을 자동화합니다.</p>
+
+            <div style="display:flex;flex-direction:column;gap:var(--space-6);margin-top:var(--space-6)">
+              <div class="step-item">
+                <div class="step-num">1</div>
+                <div class="step-item__body">
+                  <strong>Cowork 탭 선택</strong>
+                  <p class="text-secondary text-body-sm mt-2">앱 상단에서 <span class="term" data-def="AI가 화면을 보고 마우스/키보드로 앱을 직접 조작하는 기능" data-tip="cowork">Cowork</span> 탭을 선택합니다.</p>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-num">2</div>
+                <div class="step-item__body">
+                  <strong>작업 지시</strong>
+                  <p class="text-secondary text-body-sm mt-2">"Slack에서 특정 채널의 메시지를 스프레드시트로 정리해줘"처럼 원하는 작업을 자연어로 입력합니다.</p>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-num">3</div>
+                <div class="step-item__body">
+                  <strong>AI 자동 실행</strong>
+                  <p class="text-secondary text-body-sm mt-2">AI가 화면을 공유받아 직접 앱을 조작하며 작업을 수행합니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══ [4] 핵심 기능 ═══ -->
+      <section class="section" id="features" style="border-top:1px solid var(--color-border)">
+        <span class="section-label">기능</span>
+        <h2 class="text-h2 mb-4">핵심 기능</h2>
+        <p class="text-body-lg mb-8">클로드 데스크탑에서만 사용할 수 있는 주요 기능입니다.</p>
+
+        <div class="accordion">
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="feat-cowork">
+              <svg class="accordion__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <span class="accordion__trigger-label">Cowork — 앱 직접 조작 <span class="badge badge--dev">고급</span></span>
+            </button>
+            <div class="accordion__content" id="feat-cowork">
+              <div class="accordion__inner">
+                <p>AI가 화면을 보고 마우스/키보드로 앱을 조작하는 기능입니다. 특정 소프트웨어가 API를 제공하지 않아도, 사람처럼 GUI를 통해 작업할 수 있습니다. 현재 macOS에서 주로 사용 가능합니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="feat-connectors">
+              <svg class="accordion__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <span class="accordion__trigger-label">
+                <span class="term" data-def="클릭 몇 번으로 연결하는 사전 설정된 통합" data-tip="connector">커넥터</span>
+              </span>
+            </button>
+            <div class="accordion__content" id="feat-connectors">
+              <div class="accordion__inner">
+                <p>Slack, Google Drive, Notion 같은 서비스를 클릭 몇 번으로 연결합니다. 설정 → 연결에서 원하는 서비스를 선택하고 승인하면 됩니다. 코드나 JSON 설정 없이 GUI로 가능합니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="feat-mcp">
+              <svg class="accordion__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <span class="accordion__trigger-label">MCP 서버 <span class="badge badge--dev">고급</span></span>
+            </button>
+            <div class="accordion__content" id="feat-mcp">
+              <div class="accordion__inner">
+                <p>Model Context Protocol로 외부 도구를 Claude에 연결합니다. 커넥터가 없는 서비스(사내 DB, 커스텀 API 등)도 MCP 서버를 통해 연결할 수 있습니다. <code class="inline">claude_desktop_config.json</code>을 편집합니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="feat-mcpb">
+              <svg class="accordion__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <span class="accordion__trigger-label">
+                <span class="term" data-def="더블클릭으로 설치하는 MCP 서버 패키지 (.mcpb)" data-tip="desktop-extension">데스크탑 확장</span> (.mcpb)
+              </span>
+            </button>
+            <div class="accordion__content" id="feat-mcpb">
+              <div class="accordion__inner">
+                <p><code class="inline">.mcpb</code> 확장자 파일을 더블클릭하면 MCP 서버가 자동으로 설치됩니다. MCP 서버를 직접 설정하지 않고도 사전 패키징된 통합 기능을 사용할 수 있는 방법입니다.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══ [5] 다음 단계 ═══ -->
+      <section class="section" id="next" style="border-top:1px solid var(--color-border)">
+        <span class="section-label">다음 단계</span>
+        <h2 class="text-h2 mb-8">더 알아보기</h2>
+
+        <div class="grid grid-3">
+          <a href="../claude-web/" class="card card--product" style="text-decoration:none">
+            <div class="card__header">
+              <span class="pc__icon-emoji">🌐</span>
+              <div>
+                <h3 class="card__title">클로드 웹</h3>
+                <p class="card__subtitle">claude.ai · 브라우저에서 바로</p>
+              </div>
+            </div>
+            <p class="card__desc">Chat 기능(프로젝트, 아티팩트, 메모리)의 상세 가이드입니다.</p>
+            <span class="card__link">알아보기 <span class="card__link-arrow" aria-hidden="true">→</span></span>
+          </a>
+
+          <a href="../claude-code/" class="card card--product" style="text-decoration:none">
+            <div class="card__header">
+              <span class="pc__icon-emoji">⚡</span>
+              <div>
+                <h3 class="card__title">클로드 코드</h3>
+                <p class="card__subtitle">터미널 · VS Code · Desktop Code탭</p>
+              </div>
+            </div>
+            <p class="card__desc">AI가 파일을 직접 수정하고 명령을 실행합니다. Code 탭의 하네스 세팅까지 다룹니다.</p>
+            <span class="card__link">시작하기 <span class="card__link-arrow" aria-hidden="true">→</span></span>
+          </a>
+
+          <a href="../tip/" class="card card--product" style="text-decoration:none">
+            <div class="card__header">
+              <span class="pc__icon-emoji">💡</span>
+              <div>
+                <h3 class="card__title">TIP</h3>
+                <p class="card__subtitle">MCP · 커넥터 · 세팅 레이어</p>
+              </div>
+            </div>
+            <p class="card__desc">MCP, 하네스, 커넥터 등 기술 용어를 쉽게 이해합니다.</p>
+            <span class="card__link">알아보기 <span class="card__link-arrow" aria-hidden="true">→</span></span>
+          </a>
+        </div>
+
+        <p class="text-center mt-8">
+          <a href="https://claude.ai/download" class="text-secondary text-body-sm" target="_blank" rel="noopener">공식 다운로드 페이지 →</a>
+        </p>
+      </section>
+
+    </div><!-- /content -->
+  </div><!-- /page-with-toc -->
+
 </main>
 
+<!-- ═══ FOOTER ═══ -->
 <footer class="footer">
   <div class="container">
     <p>이 사이트는 Anthropic 공식 사이트가 아닌 <strong>비공식 한국어 가이드</strong>입니다.</p>
