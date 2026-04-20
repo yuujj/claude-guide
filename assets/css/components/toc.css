@@ -6,15 +6,16 @@
 /* ── Page Layout with ToC ─────────────────────────────────── */
 .page-with-toc {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: auto 1fr;
   gap: var(--space-8);
-  max-width: var(--container-xl);
+  max-width: calc(var(--container-xl) + 180px + var(--space-8)); /* TOC 180 + gap 32 + content 1200 */
   margin-inline: auto;
   padding-inline: var(--container-pad);
 }
 
 /* ── Desktop Sidebar ToC ──────────────────────────────────── */
 .toc {
+  width: 180px;
   position: sticky;
   top: calc(var(--nav-height) + var(--space-6));
   align-self: start;

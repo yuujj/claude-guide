@@ -66,8 +66,12 @@
 .card__header {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--space-3);
+  gap: var(--space-4);
+}
+
+.card__header > div {
+  flex: 1;
+  min-width: 0;
 }
 
 .card__title {
@@ -79,10 +83,11 @@
 }
 
 .card__subtitle {
-  font-size: var(--text-body-sm);
+  font-size: var(--text-label);
   font-weight: var(--weight-medium);
-  color: var(--color-text-secondary);
+  color: var(--color-text-muted);
   margin-bottom: var(--space-3);
+  letter-spacing: 0.01em;
 }
 
 .card__desc {
@@ -269,9 +274,19 @@
 
 /* ── Product Card 확장 — 통합 3렌즈 서브요소 ─────────────── */
 .pc__icon-emoji {
-  font-size: 1.75rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.375rem;
   line-height: 1;
   flex-shrink: 0;
+  background: transparent;
+}
+
+.card__header .card__subtitle {
+  margin-bottom: 0;
 }
 
 .pc__usecase {
