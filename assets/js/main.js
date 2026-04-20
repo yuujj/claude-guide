@@ -13,6 +13,8 @@ import { initDisclosure } from './disclosure.js';
 import { initCodeCopy } from './code-copy.js';
 import { initTerm } from './term.js';
 import { initToc } from './toc.js';
+import { initScenarioFilter } from './scenario-filter.js';
+import { initHarnessChecklist } from './harness-checklist.js';
 
 const init = () => {
   initTheme();
@@ -23,6 +25,8 @@ const init = () => {
   initCodeCopy();
   initTerm();
   initToc();
+  initScenarioFilter();
+  initHarnessChecklist();
 };
 
 if (document.readyState === 'loading') {

@@ -148,3 +148,111 @@
     text-orientation: initial;
   }
 }
+
+/* ── Filter Controls ─────────────────────────────────────── */
+.scenario-filter {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-2));
+  z-index: 40;
+  background: color-mix(in srgb, var(--color-bg-page) 95%, transparent);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.scenario-filter__group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.scenario-filter__label {
+  font-size: var(--text-label);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wide);
+  flex-shrink: 0;
+  width: 40px;
+}
+
+.scenario-filter__tabs {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.scenario-filter__tabs::-webkit-scrollbar { display: none; }
+
+.scenario-filter__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 4px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.scenario-filter__btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.scenario-filter__btn.is-active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+.scenario-filter__btn .scenario__dot {
+  width: 8px;
+  height: 8px;
+}
+
+.scenario-filter__count {
+  font-size: var(--text-caption);
+  color: var(--color-text-muted);
+  align-self: flex-end;
+  margin: 0;
+}
+
+/* ── Empty State ─────────────────────────────────────────── */
+.scenario-empty {
+  text-align: center;
+  padding: var(--space-12) var(--space-8);
+  color: var(--color-text-muted);
+  font-size: var(--text-body-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* ── Environment Badges ───────────────────────────────────── */
+.scenario__env-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-top: var(--space-3);
+}
+
+.scenario__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}

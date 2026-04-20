@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="클로드 코드 시나리오 라이브러리 — 비개발자부터 개발자까지 복붙 가능한 프롬프트 15개.">
+  <title>시나리오 라이브러리 — 클로드 코드</title>
+
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved) document.documentElement.setAttribute('data-theme', saved);
+        else if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script type="module" src="../../assets/js/main.js"></script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">본문으로 건너뛰기</a>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="../.." class="nav__logo">
+      <span class="nav__logo-icon">C</span>
+      <span class="nav__logo-text">클로드 가이드</span>
+    </a>
+    <div class="nav__links">
+      <a href="../.." class="nav__link">홈</a>
+      <a href="../../claude-web/" class="nav__link">웹</a>
+      <a href="../../claude-desktop/" class="nav__link">데스크탑</a>
+      <a href="../" class="nav__link is-active">코드</a>
+      <a href="../../tip/" class="nav__link">TIP</a>
+    </div>
+    <div class="nav__actions">
+      <button class="nav__icon-btn" id="theme-toggle" aria-label="테마 전환">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- 모바일 메뉴 — nav 바깥에 위치 (backdrop-filter 스택 충돌 방지) -->
+<div class="nav__mobile-menu" id="nav-mobile-menu" hidden>
+  <a href="../.." class="nav__link">홈</a>
+  <a href="../../claude-web/" class="nav__link">웹</a>
+  <a href="../../claude-desktop/" class="nav__link">데스크탑</a>
+  <a href="../" class="nav__link is-active">코드</a>
+  <a href="../../tip/" class="nav__link">TIP</a>
+</div>
+
+<main id="main">
+  <div class="container">
+
+    <!-- 브레드크럼 -->
+    <nav class="subnav" aria-label="브레드크럼">
+      <a href="../" class="subnav__back">← 클로드 코드</a>
+      <span class="subnav__sep">/</span>
+      <span class="subnav__current">시나리오 라이브러리</span>
+    </nav>
+
+    <!-- Hero -->
+    <section class="section" id="hero">
+      <div class="hero__eyebrow">
+        <span class="badge badge--coral">복붙 가능</span>
+        <span class="badge badge--platform">15개 프롬프트</span>
+      </div>
+      <h1 class="text-display mt-3 mb-4">시나리오 라이브러리</h1>
+      <p class="text-body-lg text-secondary mb-6" style="max-width:56ch">
+        기초부터 고급까지 — 비개발자 예시를 먼저 배치했습니다.
+        <span class="badge badge--coral">하네스</span> 배지가 붙은 예시는 한 번 세팅하면 반복 가능한 워크플로로 발전시킬 수 있습니다.
+      </p>
+      <div class="badge-group">
+        <span class="badge badge--general">비개발자</span>
+        <span class="badge badge--dev">개발자</span>
+        <span class="badge badge--coral">하네스</span>
+        <span class="badge badge--platform">데스크탑 · 웹 · CLI</span>
+      </div>
+    </section>
+
+    <!-- 필터 + 시나리오 리스트 -->
+    <section class="section" id="scenarios" style="border-top:1px solid var(--color-border)">
+
+      <!-- 필터 -->
+      <div class="scenario-filter" id="scenario-filter">
+        <div class="scenario-filter__group">
+          <span class="scenario-filter__label">대상</span>
+          <div class="scenario-filter__tabs" role="group" aria-label="대상 필터">
+            <button class="scenario-filter__btn is-active" data-filter-type="audience" data-filter-value="all">전체</button>
+            <button class="scenario-filter__btn" data-filter-type="audience" data-filter-value="general">비개발자</button>
+            <button class="scenario-filter__btn" data-filter-type="audience" data-filter-value="dev">개발자</button>
+            <button class="scenario-filter__btn" data-filter-type="audience" data-filter-value="harness">하네스</button>
+          </div>
+        </div>
+        <div class="scenario-filter__group">
+          <span class="scenario-filter__label">난이도</span>
+          <div class="scenario-filter__tabs" role="group" aria-label="난이도 필터">
+            <button class="scenario-filter__btn is-active" data-filter-type="level" data-filter-value="all">전체</button>
+            <button class="scenario-filter__btn" data-filter-type="level" data-filter-value="basic">
+              <span class="scenario__dot scenario__dot--basic"></span>기초
+            </button>
+            <button class="scenario-filter__btn" data-filter-type="level" data-filter-value="mid">
+              <span class="scenario__dot scenario__dot--mid"></span>중간
+            </button>
+            <button class="scenario-filter__btn" data-filter-type="level" data-filter-value="adv">
+              <span class="scenario__dot scenario__dot--adv"></span>고급
+            </button>
+          </div>
+        </div>
+        <div class="scenario-filter__group">
+          <span class="scenario-filter__label">환경</span>
+          <div class="scenario-filter__tabs" role="group" aria-label="환경 필터">
+            <button class="scenario-filter__btn is-active" data-filter-type="env" data-filter-value="all">전체</button>
+            <button class="scenario-filter__btn" data-filter-type="env" data-filter-value="desktop">데스크탑</button>
+            <button class="scenario-filter__btn" data-filter-type="env" data-filter-value="web">웹</button>
+            <button class="scenario-filter__btn" data-filter-type="env" data-filter-value="cli">CLI</button>
+          </div>
+        </div>
+        <p class="scenario-filter__count" id="scenario-count" aria-live="polite">15개 시나리오</p>
+      </div>
+
+      <!-- 빈 상태 -->
+      <div class="scenario-empty" id="scenario-empty" hidden>
+        <p>조건에 맞는 시나리오가 없습니다.</p>
+        <button class="btn btn--secondary" id="scenario-reset-filter">필터 초기화</button>
+      </div>
+
+      <!-- 시나리오 리스트 — JS 동적 렌더링 -->
+      <div class="scenario-list" id="scenario-list" role="list"></div>
+
+    </section>
+
+    <!-- 다음 단계 -->
+    <section class="section" id="next" style="border-top:1px solid var(--color-border)">
+      <h2 class="text-h2 mb-4">다음 단계</h2>
+      <p class="text-body-lg mb-8">
+        <span class="badge badge--coral">하네스</span> 배지가 붙은 시나리오를 매일 쓰고 싶다면, 세팅을 한 번 해두세요.
+      </p>
+      <div class="grid grid-3">
+        <a href="../harness/" class="card card--product" style="text-decoration:none">
+          <div class="card__header">
+            <span class="pc__icon-emoji">⚙️</span>
+            <div>
+              <h3 class="card__title">하네스 세팅 가이드</h3>
+              <p class="card__subtitle">CLAUDE.md · 커맨드 · hooks · MCP</p>
+            </div>
+          </div>
+          <p class="card__desc">한 번 세팅해두면 같은 설명을 반복하지 않아도 됩니다.</p>
+          <span class="card__link">세팅 시작 <span class="card__link-arrow" aria-hidden="true">→</span></span>
+        </a>
+        <a href="../" class="card card--product" style="text-decoration:none">
+          <div class="card__header">
+            <span class="pc__icon-emoji">⚡</span>
+            <div>
+              <h3 class="card__title">클로드 코드</h3>
+              <p class="card__subtitle">시작하기 · 핵심 기능 · 비교</p>
+            </div>
+          </div>
+          <p class="card__desc">시작 방법과 핵심 기능을 한 페이지에서 확인합니다.</p>
+          <span class="card__link">돌아가기 <span class="card__link-arrow" aria-hidden="true">→</span></span>
+        </a>
+        <a href="../../tip/" class="card card--product" style="text-decoration:none">
+          <div class="card__header">
+            <span class="pc__icon-emoji">💡</span>
+            <div>
+              <h3 class="card__title">TIP</h3>
+              <p class="card__subtitle">용어 사전 · 세팅 레이어</p>
+            </div>
+          </div>
+          <p class="card__desc">하네스, 서브에이전트 등 기술 용어를 쉽게 이해합니다.</p>
+          <span class="card__link">알아보기 <span class="card__link-arrow" aria-hidden="true">→</span></span>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <p>이 사이트는 Anthropic 공식 사이트가 아닌 <strong>비공식 한국어 가이드</strong>입니다.</p>
+    <p>
+      <a href="https://github.com/yuujj/claude-guide">GitHub</a> ·
+      <a href="https://claude.ai">claude.ai</a> ·
+      <a href="../../tip/">TIP</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

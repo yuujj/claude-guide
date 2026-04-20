@@ -78,3 +78,108 @@
 .accordion__inner p + p {
   margin-top: var(--space-3);
 }
+
+/* ── Trigger Row (trigger + check button sibling) ─────────── */
+.accordion__trigger-row {
+  display: flex;
+  align-items: stretch;
+}
+
+.accordion__trigger-row .accordion__trigger {
+  flex: 1;
+}
+
+.accordion__trigger-row .harness-check {
+  margin: var(--space-3) var(--space-4) var(--space-3) 0;
+  align-self: center;
+}
+
+/* ── Harness Progress Bar ─────────────────────────────────── */
+.harness-progress {
+  margin-bottom: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.harness-progress__bar-wrap {
+  height: 6px;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.harness-progress__bar {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+}
+
+.harness-progress__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.harness-progress__label {
+  font-size: var(--text-caption);
+  color: var(--color-text-muted);
+}
+
+.harness-progress__reset {
+  font-size: var(--text-label);
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.harness-progress__reset:hover {
+  color: var(--color-text-secondary);
+}
+
+/* ── Completed Accordion Item ─────────────────────────────── */
+.accordion__item.is-done {
+  border-color: #10b981;
+}
+
+.accordion__item.is-done .accordion__trigger-label {
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .accordion__item.is-done {
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+/* ── Harness Check Button ─────────────────────────────────── */
+.harness-check {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.harness-check svg {
+  width: 12px;
+  height: 12px;
+  opacity: 0;
+  color: white;
+  transition: opacity var(--transition-fast);
+}
+
+.harness-check.is-done {
+  background: #10b981;
+  border-color: #10b981;
+}
+
+.harness-check.is-done svg {
+  opacity: 1;
+}
