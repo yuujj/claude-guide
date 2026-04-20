@@ -13,6 +13,11 @@
   padding-inline: var(--container-pad);
 }
 
+/* content column — grid item이 min-content 이하로 shrink 가능하도록 */
+.page-with-toc > div {
+  min-width: 0;
+}
+
 /* ── Desktop Sidebar ToC ──────────────────────────────────── */
 .toc {
   width: 180px;
