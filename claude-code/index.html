@@ -39,7 +39,7 @@
     </a>
     <div class="nav__links">
       <a href=".." class="nav__link">홈</a>
-      <a href="../claude-web/" class="nav__link">클로드 웹</a>
+      <a href="../claude-web/" class="nav__link">웹</a>
       <a href="../claude-desktop/" class="nav__link">데스크탑</a>
       <a href="../claude-code/" class="nav__link is-active">코드</a>
       <a href="../tip/" class="nav__link">TIP</a>
@@ -60,7 +60,7 @@
 
 <div class="nav__mobile-menu" id="mobile-menu">
   <a href=".." class="nav__mobile-link">홈</a>
-  <a href="../claude-web/" class="nav__mobile-link">클로드 웹</a>
+  <a href="../claude-web/" class="nav__mobile-link">웹</a>
   <a href="../claude-desktop/" class="nav__mobile-link">데스크탑</a>
   <a href="../claude-code/" class="nav__mobile-link is-active">코드</a>
   <a href="../tip/" class="nav__mobile-link">TIP</a>
@@ -85,10 +85,10 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </button>
     <div class="toc-mobile__dropdown" id="toc-mobile-dropdown" role="navigation" aria-label="페이지 목차">
-      <a href="#intro" class="toc__item">이건 코딩 도구인가?</a>
+      <a href="#intro" class="toc__item">AI가 직접 실행합니다</a>
       <a href="#start" class="toc__item">시작하기</a>
-      <a href="#scenarios" class="toc__item">이런 걸 맡길 수 있어요</a>
-      <a href="#harness" class="toc__item">나만의 세팅하기</a>
+      <a href="scenarios/" class="toc__item">시나리오 라이브러리 ↗</a>
+      <a href="harness/" class="toc__item">하네스 세팅 가이드 ↗</a>
       <a href="#features" class="toc__item">핵심 기능 <span class="badge badge--dev">고급</span></a>
       <a href="#compare" class="toc__item">Cursor vs Copilot</a>
       <a href="#tips" class="toc__item">팁</a>
@@ -103,10 +103,10 @@
     <aside class="toc" aria-label="페이지 목차">
       <div class="toc__title">목차</div>
       <nav class="toc__list">
-        <a href="#intro" class="toc__item">이건 코딩 도구인가?</a>
+        <a href="#intro" class="toc__item">AI가 직접 실행합니다</a>
         <a href="#start" class="toc__item">시작하기</a>
-        <a href="#scenarios" class="toc__item">이런 걸 맡길 수 있어요</a>
-        <a href="#harness" class="toc__item">나만의 세팅하기</a>
+        <a href="scenarios/" class="toc__item">시나리오 라이브러리 ↗</a>
+        <a href="harness/" class="toc__item">하네스 세팅 가이드 ↗</a>
         <a href="#features" class="toc__item">핵심 기능 <span class="badge badge--dev">고급</span></a>
         <a href="#compare" class="toc__item">Cursor vs Copilot</a>
         <a href="#tips" class="toc__item">팁</a>
@@ -117,10 +117,10 @@
     <!-- Content -->
     <div>
 
-      <!-- ═══ [2] 이건 코딩 도구인가? ═══ -->
+      <!-- ═══ [2] AI가 직접 실행합니다 ═══ -->
       <section class="section" id="intro">
-        <span class="section-label">오해 해소</span>
-        <h2 class="text-h2 mb-4">이건 코딩 도구인가?</h2>
+        <span class="section-label">핵심 개념</span>
+        <h2 class="text-h2 mb-4">AI가 직접 실행합니다</h2>
         <p class="text-body-lg mb-6">
           클로드 코드는 "코딩 도구"라기보다, <strong>AI에게 작업을 직접 맡기는 도구</strong>입니다.
           코딩을 몰라도 "이 폴더의 CSV 100개를 하나의 엑셀로 합쳐줘"처럼 자연어로 지시하면 됩니다.
@@ -309,9 +309,10 @@
                 <div class="step-num">2</div>
                 <div class="step-item__body">
                   <strong>Claude Code 설치</strong>
+                  <p class="text-secondary text-body-sm mt-2">공식 설치 페이지에서 네이티브 인스톨러를 사용하는 것을 권장합니다. npm으로 설치할 수도 있습니다.</p>
                   <div class="code-block mt-3">
                     <div class="code-block__header">
-                      <span class="code-block__lang">bash</span>
+                      <span class="code-block__lang">bash (npm 방식)</span>
                     </div>
                     <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
                   </div>
@@ -337,18 +338,17 @@ claude</code></pre>
         </div>
       </section>
 
-      <!-- ═══ [4] 이런 걸 맡길 수 있어요 ═══ -->
+      <!-- ═══ [4] 이런 걸 맡길 수 있어요 (허브 요약) ═══ -->
       <section class="section" id="scenarios" style="border-top:1px solid var(--color-border)">
         <span class="section-label">활용</span>
         <h2 class="text-h2 mb-4">이런 걸 맡길 수 있어요</h2>
-        <p class="text-body-lg mb-8">
-          기초부터 고급까지 — 비개발자 예시를 먼저 배치했습니다.
-          <span class="badge badge--coral">하네스</span> 배지가 붙은 예시는 <a href="#harness">세팅 섹션</a>에서 자세히 다룹니다.
+        <p class="text-body-lg mb-6">
+          기초부터 고급까지 15개 시나리오를 준비했습니다. 아래는 대표 예시 3가지입니다.
         </p>
 
         <div class="scenario-list">
 
-          <!-- 🟢 기초 1 -->
+          <!-- 🟢 기초 — 비개발자 -->
           <div class="scenario-item">
             <div class="scenario__rail">
               <span class="scenario__dot scenario__dot--basic"></span>
@@ -357,46 +357,22 @@ claude</code></pre>
             <div class="scenario__body">
               <div class="scenario__header">
                 <h3 class="scenario__title">스크린샷 폴더 자동 정리</h3>
-                <div class="badge-group">
-                  <span class="badge badge--general">비개발자</span>
-                </div>
+                <div class="scenario__badges"><span class="badge badge--general">비개발자</span></div>
               </div>
               <p class="scenario__situation">Desktop에 쌓인 스크린샷 수백 장을 월별 서브폴더로 나누고 파일명을 규칙화합니다.</p>
               <div class="code-block">
-                <div class="code-block__header">
-                  <span class="code-block__lang">프롬프트</span>
-                </div>
+                <div class="code-block__header"><span class="code-block__lang">프롬프트</span></div>
                 <pre><code>이 폴더의 .png 파일 모두, 생성일 기준으로 YYYY-MM 서브폴더에 옮기고,
 파일명은 YYYY-MM-DD_원래이름.png 로 바꿔줘</code></pre>
               </div>
-            </div>
-          </div>
-
-          <!-- 🟢 기초 2 -->
-          <div class="scenario-item">
-            <div class="scenario__rail">
-              <span class="scenario__dot scenario__dot--basic"></span>
-              <span class="scenario__level">기초</span>
-            </div>
-            <div class="scenario__body">
-              <div class="scenario__header">
-                <h3 class="scenario__title">CSV 100개 합치기</h3>
-                <div class="badge-group">
-                  <span class="badge badge--general">비개발자</span>
-                </div>
-              </div>
-              <p class="scenario__situation">여러 부서에서 받은 지점별 매출 CSV를 하나로 통합하고 중복을 제거합니다.</p>
-              <div class="code-block">
-                <div class="code-block__header">
-                  <span class="code-block__lang">프롬프트</span>
-                </div>
-                <pre><code>이 폴더의 모든 csv를 하나로 합쳐서 total.xlsx 로 저장.
-컬럼 이름 통일하고 지점명 기준 중복 제거해줘</code></pre>
+              <div class="scenario__env-badges">
+                <span class="badge badge--platform">데스크탑</span>
+                <span class="badge badge--platform">웹</span>
               </div>
             </div>
           </div>
 
-          <!-- 🟡 중간 -->
+          <!-- 🟡 중간 — 비개발자 + 하네스 -->
           <div class="scenario-item">
             <div class="scenario__rail">
               <span class="scenario__dot scenario__dot--mid"></span>
@@ -405,47 +381,25 @@ claude</code></pre>
             <div class="scenario__body">
               <div class="scenario__header">
                 <h3 class="scenario__title">주간 보고서 자동화</h3>
-                <div class="badge-group">
+                <div class="scenario__badges">
                   <span class="badge badge--general">비개발자</span>
                   <span class="badge badge--coral">하네스</span>
                 </div>
               </div>
               <p class="scenario__situation">매주 월요일 반복하던 작업을 슬래시 커맨드 한 번으로 실행합니다.</p>
               <div class="code-block">
-                <div class="code-block__header">
-                  <span class="code-block__lang">슬래시 커맨드</span>
-                </div>
+                <div class="code-block__header"><span class="code-block__lang">슬래시 커맨드</span></div>
                 <pre><code>/weekly-report
 # → 이 폴더 데이터 읽고, 템플릿 채우고, PDF로 저장</code></pre>
               </div>
-            </div>
-          </div>
-
-          <!-- 🔵 고급 1 -->
-          <div class="scenario-item">
-            <div class="scenario__rail">
-              <span class="scenario__dot scenario__dot--adv"></span>
-              <span class="scenario__level">고급</span>
-            </div>
-            <div class="scenario__body">
-              <div class="scenario__header">
-                <h3 class="scenario__title">실패 테스트 원인 찾아 수정</h3>
-                <div class="badge-group">
-                  <span class="badge badge--dev">개발자</span>
-                </div>
-              </div>
-              <p class="scenario__situation">CI에서 실패한 테스트의 원인을 파악하고, 회귀 테스트를 추가하고, PR 초안을 작성합니다.</p>
-              <div class="code-block">
-                <div class="code-block__header">
-                  <span class="code-block__lang">프롬프트</span>
-                </div>
-                <pre><code>CI 로그 보고 실패 원인 찾아서 수정.
-회귀 테스트 추가하고 PR 초안 작성해줘 — 리뷰어가 이해할 수 있게 맥락 포함</code></pre>
+              <div class="scenario__env-badges">
+                <span class="badge badge--platform">데스크탑</span>
+                <span class="badge badge--platform">CLI</span>
               </div>
             </div>
           </div>
 
-          <!-- 🔵 고급 2 -->
+          <!-- 🔵 고급 — 개발자 + 하네스 -->
           <div class="scenario-item">
             <div class="scenario__rail">
               <span class="scenario__dot scenario__dot--adv"></span>
@@ -454,195 +408,85 @@ claude</code></pre>
             <div class="scenario__body">
               <div class="scenario__header">
                 <h3 class="scenario__title">API 인증 검사 누락 감사</h3>
-                <div class="badge-group">
+                <div class="scenario__badges">
                   <span class="badge badge--dev">개발자</span>
                   <span class="badge badge--coral">하네스</span>
                 </div>
               </div>
-              <p class="scenario__situation">
-                <span class="term" data-def="여러 AI가 병렬로 다른 부분을 작업하는 기능" data-tip="sub-agent">서브에이전트</span>로 병렬 처리하여 엔드포인트별 인증 검사 누락을 빠르게 찾아냅니다.
-              </p>
+              <p class="scenario__situation">서브에이전트로 병렬 처리하여 엔드포인트별 인증 검사 누락을 빠르게 찾아냅니다.</p>
               <div class="code-block">
-                <div class="code-block__header">
-                  <span class="code-block__lang">프롬프트</span>
-                </div>
+                <div class="code-block__header"><span class="code-block__lang">프롬프트</span></div>
                 <pre><code>routes/ 아래 엔드포인트 전부 스캔.
 인증 미들웨어 누락된 것, 권한 검사 없이 데이터 반환하는 것 목록화.
 서브에이전트로 병렬 처리</code></pre>
+              </div>
+              <div class="scenario__env-badges">
+                <span class="badge badge--platform">CLI</span>
               </div>
             </div>
           </div>
 
         </div>
+
+        <div class="mt-8" style="text-align:center">
+          <p class="text-body-sm text-secondary mb-3">
+            필터로 대상·난이도·환경을 조합해 나에게 맞는 예시를 찾아보세요.
+          </p>
+          <a href="scenarios/" class="btn btn--primary">시나리오 전체 보기 (15개) →</a>
+        </div>
       </section>
 
-      <!-- ═══ [5] 나만의 클로드 코드 세팅하기 — 하네스 엔지니어링 ═══ -->
+      <!-- ═══ [5] 나만의 세팅하기 (허브 요약) ═══ -->
       <section class="section" id="harness" style="border-top:1px solid var(--color-border)">
         <span class="section-label">세팅</span>
         <h2 class="text-h2 mb-4">나만의 클로드 코드 세팅하기</h2>
         <p class="text-body-lg mb-2"><strong>한 번 세팅해두면, 같은 설명을 반복하지 않아도 됩니다.</strong></p>
-        <p class="text-body-sm text-secondary mb-8">
-          LLM을 감싸는 스캐폴딩을 <strong>하네스(harness)</strong>라고 합니다. 같은 모델도 하네스 설정에 따라 생산성이 크게 달라집니다.
-          <span class="badge badge--dev">고급</span> 항목을 몰라도 기초 예시는 모두 사용할 수 있습니다.
+        <p class="text-body-sm text-secondary mb-6">
+          LLM을 감싸는 스캐폴딩을 <strong>하네스(harness)</strong>라고 합니다. 자세한 가이드와 코드 예시는 전용 페이지에서 확인하세요.
         </p>
 
-        <div class="accordion">
+        <div style="overflow-x:auto;margin-bottom:var(--space-6)">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>세팅</th><th>방법 요약</th><th>난이도</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>CLAUDE.md</strong></td>
+                <td>프로젝트 루트에 파일 생성 — 매 세션 자동 로드</td>
+                <td><span class="badge badge--general">쉬움</span></td>
+              </tr>
+              <tr>
+                <td><strong>슬래시 커맨드</strong></td>
+                <td><code class="inline">.claude/commands/*.md</code> 파일 생성</td>
+                <td><span class="badge badge--general">보통</span></td>
+              </tr>
+              <tr>
+                <td><strong>Hooks</strong></td>
+                <td><code class="inline">settings.json</code> hooks 배열 — 이벤트 기반 실행</td>
+                <td><span class="badge badge--dev">고급</span></td>
+              </tr>
+              <tr>
+                <td><strong>권한 모드</strong></td>
+                <td><code class="inline">permissions.allow</code>/<code class="inline">deny</code>로 자동 허용·차단 지정</td>
+                <td><span class="badge badge--dev">고급</span></td>
+              </tr>
+              <tr>
+                <td><strong>서브에이전트</strong></td>
+                <td>프롬프트에서 "서브에이전트로 병렬 처리" 요청</td>
+                <td><span class="badge badge--dev">고급</span></td>
+              </tr>
+              <tr>
+                <td><strong>MCP 서버</strong></td>
+                <td><code class="inline">mcpServers</code>에 외부 서버 연결</td>
+                <td><span class="badge badge--dev">고급</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-          <!-- CLAUDE.md -->
-          <div class="accordion__item">
-            <button class="accordion__trigger" aria-expanded="false" aria-controls="harness-claudemd">
-              <svg class="accordion__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              <span class="accordion__trigger-label">
-                <span class="term" data-def="프로젝트 규칙을 적어두는 파일 — AI가 매 세션 자동으로 읽음" data-tip="claude-md">CLAUDE.md</span> — 프로젝트 규칙 자동 주입
-              </span>
-              <span class="badge badge--general">쉬움</span>
-            </button>
-            <div class="accordion__content" id="harness-claudemd">
-              <div class="accordion__inner">
-                <p>프로젝트 루트에 <code class="inline">CLAUDE.md</code> 파일을 만들면, 클로드 코드가 매 세션 시작 시 자동으로 읽습니다. "이 프로젝트는 Python 3.11, pytest 사용. 커밋 메시지는 한국어로" 같은 규칙을 한 번만 적어두면 됩니다.</p>
-                <div class="code-block mt-4">
-                  <div class="code-block__header">
-                    <span class="code-block__lang">CLAUDE.md 예시</span>
-                  </div>
-                  <pre><code># 프로젝트 규칙
-
-## 기술 스택
-- Python 3.11, FastAPI, PostgreSQL
-- 테스트: pytest, coverage 90% 이상 유지
-
-## 커밋 규칙
-- 메시지는 한국어로, 동사로 시작 ("기능 추가", "버그 수정")
-- PR 설명에는 변경 이유를 반드시 포함</code></pre>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 슬래시 커맨드 -->
-          <div class="accordion__item">
-            <button class="accordion__trigger" aria-expanded="false" aria-controls="harness-commands">
-              <svg class="accordion__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              <span class="accordion__trigger-label">슬래시 커맨드 — 자주 쓰는 작업 한 줄로</span>
-              <span class="badge badge--general">보통</span>
-            </button>
-            <div class="accordion__content" id="harness-commands">
-              <div class="accordion__inner">
-                <p><code class="inline">.claude/commands/</code> 폴더에 마크다운 파일을 만들면 슬래시 커맨드로 등록됩니다. 복잡한 작업을 단 한 줄로 실행할 수 있습니다.</p>
-                <div class="code-block mt-4">
-                  <div class="code-block__header">
-                    <span class="code-block__lang">.claude/commands/weekly-report.md</span>
-                  </div>
-                  <pre><code>data/ 폴더의 이번 주 CSV를 읽고,
-sales-template.xlsx 양식에 맞춰 수치를 채운 뒤,
-reports/YYYY-MM-DD_weekly.pdf 로 저장해줘.</code></pre>
-                </div>
-                <p class="mt-4">이 파일을 만들면 채팅창에서 <code class="inline">/weekly-report</code>만 입력하면 됩니다.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Hooks -->
-          <div class="accordion__item">
-            <button class="accordion__trigger" aria-expanded="false" aria-controls="harness-hooks">
-              <svg class="accordion__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              <span class="accordion__trigger-label">Hooks — 특정 이벤트에 자동 실행</span>
-              <span class="badge badge--dev">고급</span>
-            </button>
-            <div class="accordion__content" id="harness-hooks">
-              <div class="accordion__inner">
-                <p><code class="inline">settings.json</code>의 <code class="inline">hooks</code> 배열에 셸 명령을 등록하면, 커밋 전 자동 린트·테스트, 세션 종료 시 요약 생성 등을 자동화할 수 있습니다.</p>
-                <div class="code-block mt-4">
-                  <div class="code-block__header">
-                    <span class="code-block__lang">.claude/settings.json (hooks 예시)</span>
-                  </div>
-                  <pre><code>{
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [{ "type": "command", "command": "echo '[훅] 명령 실행 전 검사'" }]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [{ "type": "command", "command": "echo '세션 종료 — 요약 저장'" }]
-      }
-    ]
-  }
-}</code></pre>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 권한 모드 -->
-          <div class="accordion__item">
-            <button class="accordion__trigger" aria-expanded="false" aria-controls="harness-permissions">
-              <svg class="accordion__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              <span class="accordion__trigger-label">권한 모드 — 안전하게 자율성 늘리기</span>
-              <span class="badge badge--dev">고급</span>
-            </button>
-            <div class="accordion__content" id="harness-permissions">
-              <div class="accordion__inner">
-                <p><code class="inline">settings.json</code>의 <code class="inline">allowedTools</code> 설정으로 매번 승인하지 않아도 되는 도구를 지정합니다. 읽기 전용 → 파일 편집 → 명령 실행 순으로 단계적으로 확대하는 것을 권장합니다.</p>
-                <div class="code-block mt-4">
-                  <div class="code-block__header">
-                    <span class="code-block__lang">.claude/settings.json</span>
-                  </div>
-                  <pre><code>{
-  "allowedTools": ["Read", "Glob", "Grep"],
-  "dangerouslyAllowedTools": ["Edit", "Write", "Bash"]
-}</code></pre>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 서브에이전트 -->
-          <div class="accordion__item">
-            <button class="accordion__trigger" aria-expanded="false" aria-controls="harness-subagent">
-              <svg class="accordion__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              <span class="accordion__trigger-label">서브에이전트 — 병렬 작업 · 컨텍스트 격리</span>
-              <span class="badge badge--dev">고급</span>
-            </button>
-            <div class="accordion__content" id="harness-subagent">
-              <div class="accordion__inner">
-                <p>프롬프트에서 "서브에이전트로 병렬 처리"를 요청하면, 클로드 코드가 여러 AI를 동시에 실행하여 큰 작업을 빠르게 처리합니다. 컨텍스트 격리로 서로 간섭 없이 각 영역을 독립적으로 다룹니다.</p>
-                <p class="mt-3">대규모 코드베이스 감사, 여러 파일 동시 리팩토링, 멀티 서비스 점검 등에 효과적입니다.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- MCP 서버 -->
-          <div class="accordion__item">
-            <button class="accordion__trigger" aria-expanded="false" aria-controls="harness-mcp">
-              <svg class="accordion__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              <span class="accordion__trigger-label">
-                <span class="term" data-def="AI가 외부 도구와 통신하는 개방형 표준 규격" data-tip="mcp">MCP</span> 서버 — 외부 데이터·도구 추가
-              </span>
-              <span class="badge badge--dev">고급</span>
-            </button>
-            <div class="accordion__content" id="harness-mcp">
-              <div class="accordion__inner">
-                <p><code class="inline">settings.json</code>의 <code class="inline">mcpServers</code>에 외부 서버를 연결하면 사내 DB, 디자인 시스템, Slack, GitHub 등을 AI가 직접 읽고 쓸 수 있습니다.</p>
-                <div class="code-block mt-4">
-                  <div class="code-block__header">
-                    <span class="code-block__lang">.claude/settings.json (MCP 예시)</span>
-                  </div>
-                  <pre><code>{
-  "mcpServers": {
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"]
-    }
-  }
-}</code></pre>
-                </div>
-                <p class="mt-4">세팅 레이어 전체 그림이 궁금하다면 → <a href="../tip/#setting-layers">TIP: 세팅 레이어 전체 그림</a></p>
-              </div>
-            </div>
-          </div>
-
+        <div style="text-align:center">
+          <a href="harness/" class="btn btn--primary">세팅 가이드 전체 보기 →</a>
         </div>
       </section>
 
