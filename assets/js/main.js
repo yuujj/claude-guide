@@ -15,6 +15,7 @@ import { initTerm } from './term.js';
 import { initToc } from './toc.js';
 import { initScenarioFilter } from './scenario-filter.js';
 import { initHarnessChecklist } from './harness-checklist.js';
+import { initTipFilter } from './tip-filter.js';
 
 const init = () => {
   initTheme();
@@ -27,6 +28,7 @@ const init = () => {
   initToc();
   initScenarioFilter();
   initHarnessChecklist();
+  initTipFilter();
 };
 
 if (document.readyState === 'loading') {

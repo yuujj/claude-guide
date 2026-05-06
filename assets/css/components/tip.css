@@ -1,0 +1,262 @@
+/* ============================================================
+   TIP — 용어 사전 페이지
+   ============================================================ */
+
+/* ── Filter bar ─────────────────────────────────────────── */
+.tip-filter {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-2));
+  z-index: 40;
+  background: color-mix(in srgb, var(--color-bg-page) 94%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-8);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.tip-filter__search-wrap {
+  position: relative;
+  flex: 0 0 auto;
+  width: 200px;
+}
+
+.tip-filter__search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.tip-filter__search {
+  width: 100%;
+  padding: 6px 12px 6px 30px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-caption);
+  font-family: var(--font-sans);
+  background: var(--color-bg-card);
+  color: var(--color-text-primary);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.tip-filter__search:focus {
+  border-color: var(--color-accent);
+}
+
+.tip-filter__search::placeholder {
+  color: var(--color-text-muted);
+}
+
+.tip-filter__tabs {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  flex: 1;
+}
+
+.tip-filter__tabs::-webkit-scrollbar { display: none; }
+
+.tip-filter__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.tip-filter__btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.tip-filter__btn.is-active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+.tip-total {
+  font-size: var(--text-caption);
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* ── Empty state ─────────────────────────────────────────── */
+.tip-empty {
+  text-align: center;
+  padding: var(--space-16) var(--space-8);
+  color: var(--color-text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--text-body-sm);
+}
+
+/* ── Card grid ───────────────────────────────────────────── */
+.tip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-5);
+}
+
+/* ── Term card ───────────────────────────────────────────── */
+.tip-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.tip-card:hover {
+  border-color: var(--color-brand-coral-light);
+}
+
+.tip-card:target,
+.tip-card.is-highlighted {
+  border-color: var(--color-accent);
+  animation: tip-ring-fade 2.5s ease forwards;
+}
+
+@keyframes tip-ring-fade {
+  0%   { box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 25%, transparent); }
+  100% { box-shadow: none; }
+}
+
+.tip-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.tip-card__icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tip-card__title-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.tip-card__term {
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.tip-card__en {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  display: block;
+  margin-top: 2px;
+}
+
+/* Category badge */
+.tip-card__cat {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: var(--weight-semibold);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.tip-card[data-category="basic"]      .tip-card__cat { background: #d1fae5; color: #065f46; }
+.tip-card[data-category="feature"]    .tip-card__cat { background: #fef3c7; color: #92400e; }
+.tip-card[data-category="connection"] .tip-card__cat { background: #dbeafe; color: #1e40af; }
+.tip-card[data-category="automation"] .tip-card__cat { background: #ede9fe; color: #5b21b6; }
+
+[data-theme="dark"] .tip-card[data-category="basic"]      .tip-card__cat { background: rgba(16,185,129,.15); color: #34d399; }
+[data-theme="dark"] .tip-card[data-category="feature"]    .tip-card__cat { background: rgba(245,158,11,.15); color: #fbbf24; }
+[data-theme="dark"] .tip-card[data-category="connection"] .tip-card__cat { background: rgba(59,130,246,.15);  color: #60a5fa; }
+[data-theme="dark"] .tip-card[data-category="automation"] .tip-card__cat { background: rgba(139,92,246,.15);  color: #a78bfa; }
+
+.tip-card__def {
+  font-size: var(--text-body-sm);
+  color: var(--color-text-primary);
+  font-weight: var(--weight-medium);
+  margin: 0;
+  line-height: var(--leading-normal);
+}
+
+.tip-card__analogy {
+  font-size: var(--text-body-sm);
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin: 0;
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--color-brand-coral-light);
+  line-height: var(--leading-relaxed);
+}
+
+.tip-card .disclosure {
+  margin-top: 0;
+}
+
+.tip-card__link {
+  display: block;
+  font-size: var(--text-caption);
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: var(--weight-medium);
+  margin-top: auto;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+}
+
+.tip-card__link:hover {
+  text-decoration: underline;
+}
+
+/* ── Mobile ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .tip-filter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+  }
+
+  .tip-filter__search-wrap {
+    width: 100%;
+  }
+
+  .tip-filter__total {
+    text-align: right;
+  }
+
+  .tip-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TIP — 클로드 용어와 활용 팁을 쉽게 설명">
+  <meta name="description" content="클로드 용어 사전 — MCP, 아티팩트, 하네스 등 25개 용어를 쉽게 설명합니다">
   <title>TIP — 클로드 가이드</title>
 
   <script>
@@ -62,20 +62,677 @@
 </div>
 
 <main id="main">
-  <section class="hero container">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero container container--narrow">
+    <span class="section-label">용어 사전</span>
     <h1 class="text-display hero__headline">TIP</h1>
-    <p class="lead hero__sub">클로드 용어와 활용 팁을 쉽게 설명합니다</p>
+    <p class="lead hero__sub">클로드 용어를 쉽게 이해하세요 — 25개 용어, 비유와 기술 상세 포함</p>
   </section>
 
+  <!-- ═══ 용어 사전 ═══ -->
   <section class="section container">
-    <div class="placeholder-section">
-      <span class="placeholder-section__badge">준비 중</span>
-      <div class="placeholder-section__title">콘텐츠 준비 중</div>
-      <p class="placeholder-section__desc">
-        용어 설명(MCP, CLI, git, 아티팩트 등), 프롬프트 팁, FAQ, 트러블슈팅을 카테고리 필터로 구분하여 제공할 예정입니다.
-      </p>
+
+    <!-- Filter bar -->
+    <div class="tip-filter" id="tip-filter">
+      <div class="tip-filter__search-wrap">
+        <svg class="tip-filter__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <input type="search" class="tip-filter__search" id="tip-search" placeholder="용어 검색..." aria-label="용어 검색">
+      </div>
+      <div class="tip-filter__tabs" role="group" aria-label="카테고리 필터">
+        <button class="tip-filter__btn is-active" data-category="all">전체</button>
+        <button class="tip-filter__btn" data-category="basic">기본</button>
+        <button class="tip-filter__btn" data-category="feature">제품 기능</button>
+        <button class="tip-filter__btn" data-category="connection">연결</button>
+        <button class="tip-filter__btn" data-category="automation">자동화</button>
+      </div>
+      <span class="tip-total" id="tip-total" aria-live="polite">25개 용어</span>
     </div>
+
+    <!-- Empty state -->
+    <div class="tip-empty" id="tip-empty" hidden>
+      <p>조건에 맞는 용어가 없습니다.</p>
+      <button class="btn btn--secondary" id="tip-reset">초기화</button>
+    </div>
+
+    <!-- Card grid -->
+    <div class="tip-grid" id="tip-grid">
+
+      <!-- ── 기본 ─────────────────────────────────── -->
+
+      <article class="tip-card" id="tip-claude" data-category="basic">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">🤖</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">클로드</h3>
+            <span class="tip-card__en">Claude</span>
+          </div>
+          <span class="tip-card__cat">기본</span>
+        </div>
+        <p class="tip-card__def">Anthropic이 만든 AI 어시스턴트.</p>
+        <p class="tip-card__analogy">질문에 답하고, 파일을 처리하고, 코드를 작성하는 만능 보조자입니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>세 모델로 구성됩니다. <strong>Opus 4.7</strong> (가장 강력한 지능), <strong>Sonnet 4.6</strong> (속도·지능 균형), <strong>Haiku 4.5</strong> (가장 빠른 응답). Constitutional AI 방식으로 학습해 답변 원칙이 투명합니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href=".." class="tip-card__link">홈에서 소개 보기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-prompt" data-category="basic">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">💬</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">프롬프트</h3>
+            <span class="tip-card__en">Prompt</span>
+          </div>
+          <span class="tip-card__cat">기본</span>
+        </div>
+        <p class="tip-card__def">AI에게 보내는 질문이나 지시.</p>
+        <p class="tip-card__analogy">AI에게 보내는 편지입니다. 구체적일수록 원하는 답을 받습니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>좋은 프롬프트의 4요소: <strong>역할</strong> ("번역가로서"), <strong>맥락</strong> ("이 파일을 바탕으로"), <strong>형식</strong> ("표 형태로"), <strong>제약</strong> ("3문장 이내로"). 모두 포함할 필요는 없지만, 많을수록 정확한 결과를 얻습니다.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="tip-card" id="tip-token" data-category="basic">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">🔢</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">토큰</h3>
+            <span class="tip-card__en">Token</span>
+          </div>
+          <span class="tip-card__cat">기본</span>
+        </div>
+        <p class="tip-card__def">AI가 텍스트를 처리하는 최소 단위.</p>
+        <p class="tip-card__analogy">단어를 1~3개 조각으로 쪼갠 것입니다. "안녕하세요"는 약 3~4토큰입니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>Claude Sonnet 4.6 기준 컨텍스트 윈도우는 <strong>200K 토큰</strong> (약 15만 단어). 입력+출력 토큰 합계가 이 한계를 넘으면 오류가 발생합니다. API 요금도 토큰 단위로 청구됩니다.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="tip-card" id="tip-context-window" data-category="basic">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">📋</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">컨텍스트 윈도우</h3>
+            <span class="tip-card__en">Context Window</span>
+          </div>
+          <span class="tip-card__cat">기본</span>
+        </div>
+        <p class="tip-card__def">AI가 한 번에 읽고 기억할 수 있는 텍스트 양.</p>
+        <p class="tip-card__analogy">책상 위에 펼쳐놓을 수 있는 공간입니다. 공간이 넘치면 오래된 내용부터 사라집니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>Claude Sonnet 4.6의 컨텍스트 윈도우는 <strong>200K 토큰</strong> (약 150페이지 분량). 대화가 길어질수록 초반 내용을 잊을 수 있습니다. 프로젝트 파일과 지침도 이 공간을 사용하므로 파일 크기를 감안해야 합니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-web/#features" class="tip-card__link">클로드 웹 기능 보기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-constitutional-ai" data-category="basic">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">⚖️</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">Constitutional AI</h3>
+            <span class="tip-card__en">Constitutional AI</span>
+          </div>
+          <span class="tip-card__cat">기본</span>
+        </div>
+        <p class="tip-card__def">원칙 문서를 기반으로 AI가 스스로 답변을 평가하고 개선하는 학습 방식.</p>
+        <p class="tip-card__analogy">일반 AI는 사람이 "좋아요/싫어요"로 학습시킵니다. Constitutional AI는 AI가 헌법(원칙)을 보고 스스로 채점합니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>Anthropic이 개발한 학습 방법론. 학습 원칙이 공개 문서로 존재해 "왜 이렇게 답하는지" 추적할 수 있습니다. 답변의 투명성과 안전성을 높이는 것이 핵심 목표입니다.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 제품 기능 ──────────────────────────────── -->
+
+      <article class="tip-card" id="tip-project" data-category="feature">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">📁</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">프로젝트</h3>
+            <span class="tip-card__en">Project</span>
+          </div>
+          <span class="tip-card__cat">제품 기능</span>
+        </div>
+        <p class="tip-card__def">대화·파일·지침을 하나로 묶는 작업 공간.</p>
+        <p class="tip-card__analogy">업무별로 분리된 폴더입니다. 마케팅 프로젝트와 개발 프로젝트가 서로 섞이지 않습니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>프로젝트에 파일을 올리면 모든 대화에서 자동 참조됩니다. 지침(시스템 프롬프트)을 설정하면 "항상 한국어로, 요점만"처럼 매 대화에 자동 적용됩니다. Pro 이상에서 팀 공유 가능. 파일 1개당 최대 30MB, 컨텍스트 200K 토큰 한도.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-web/#features" class="tip-card__link">클로드 웹에서 사용하기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-artifact" data-category="feature">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">✨</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">아티팩트</h3>
+            <span class="tip-card__en">Artifact</span>
+          </div>
+          <span class="tip-card__cat">제품 기능</span>
+        </div>
+        <p class="tip-card__def">채팅 옆에 실시간으로 렌더링되는 결과물.</p>
+        <p class="tip-card__analogy">채팅창 옆에 즉시 결과가 뜨는 화이트보드입니다. 코드, 다이어그램, 웹 페이지를 바로 확인할 수 있습니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>지원 타입: HTML 페이지, React 컴포넌트, SVG 다이어그램, 마크다운 문서, Mermaid 차트, 코드 블록. 공유 링크로 발행하거나 다른 사람이 리믹스(코드 수정·재사용)할 수 있습니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-web/#features" class="tip-card__link">클로드 웹에서 사용하기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-memory" data-category="feature">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">🧠</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">메모리</h3>
+            <span class="tip-card__en">Memory</span>
+          </div>
+          <span class="tip-card__cat">제품 기능</span>
+        </div>
+        <p class="tip-card__def">대화 내용을 자동 요약해 다음 세션에도 기억하는 기능.</p>
+        <p class="tip-card__analogy">AI가 자동으로 노트를 남겨두는 것입니다. "저는 마케터입니다"라고 말하면 다음 대화에서도 기억합니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>2026년 3월부터 전 요금제 무료 제공. 설정 → 메모리에서 저장된 내용을 확인하고 삭제할 수 있습니다. 프로젝트별로 별도 메모리가 유지됩니다. 약 24시간마다 대화를 자동 요약해 저장합니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-web/#features" class="tip-card__link">클로드 웹에서 사용하기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-web-search" data-category="feature">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">🔍</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">웹 검색</h3>
+            <span class="tip-card__en">Web Search</span>
+          </div>
+          <span class="tip-card__cat">제품 기능</span>
+        </div>
+        <p class="tip-card__def">실시간 인터넷 정보를 검색해 답변에 반영하는 기능.</p>
+        <p class="tip-card__analogy">지식이 풍부한 비서가 필요하면 즉시 검색해서 최신 정보를 가져오는 것입니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>Claude의 학습 데이터에는 최신 정보가 없습니다. 실시간 뉴스·가격·이벤트 등을 묻거나 "오늘 날짜"가 필요할 때 웹 검색이 작동합니다. Pro 이상에서 사용 가능합니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-web/#features" class="tip-card__link">클로드 웹에서 사용하기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-custom-style" data-category="feature">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">🎨</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">커스텀 스타일</h3>
+            <span class="tip-card__en">Custom Style</span>
+          </div>
+          <span class="tip-card__cat">제품 기능</span>
+        </div>
+        <p class="tip-card__def">응답 길이·어조·형식을 전역으로 고정하는 설정.</p>
+        <p class="tip-card__analogy">매번 "짧게 답해줘"라고 말하지 않아도 되도록 미리 설정해두는 것입니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>설정 → 응답 스타일에서 조정합니다. 조절 가능 항목: 길이(간결/보통/상세), 형식(산문/목록), 어조(격식/비격식), 이모지 사용 여부, 응답 언어. 프로젝트 지침과 별개로 전역 적용됩니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-web/#setup" class="tip-card__link">세팅 방법 보기 →</a>
+      </article>
+
+      <!-- ── 연결 ─────────────────────────────────── -->
+
+      <article class="tip-card" id="tip-mcp" data-category="connection">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">🔌</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">MCP</h3>
+            <span class="tip-card__en">Model Context Protocol</span>
+          </div>
+          <span class="tip-card__cat">연결</span>
+        </div>
+        <p class="tip-card__def">AI가 외부 도구와 통신하는 개방형 표준 규격.</p>
+        <p class="tip-card__analogy">USB처럼 꽂으면 연결됩니다. 표준 규격이라 MCP를 지원하는 어떤 도구든 Claude와 연결할 수 있습니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>Anthropic이 주도하는 오픈소스 표준. Claude Desktop에서 <code>claude_desktop_config.json</code>에 서버 정보를 입력해 연결합니다. GitHub, Slack, DB 등 수백 개 커뮤니티 서버가 공개되어 있습니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-desktop/#setup" class="tip-card__link">데스크탑 세팅 보기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-connector" data-category="connection">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">🧩</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">커넥터</h3>
+            <span class="tip-card__en">Connector</span>
+          </div>
+          <span class="tip-card__cat">연결</span>
+        </div>
+        <p class="tip-card__def">클릭 몇 번으로 연결하는 사전 설정된 통합.</p>
+        <p class="tip-card__analogy">복잡한 설정 없이 플러그를 꽂는 것처럼 간단합니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>Claude Desktop 설정 → 통합에서 Google Drive, Slack, GitHub 등을 승인 버튼 클릭만으로 연결합니다. JSON 편집 없이 비개발자도 사용 가능합니다. MCP를 기반으로 하지만 설치 과정을 추상화한 것입니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-desktop/#setup" class="tip-card__link">데스크탑 세팅 보기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-desktop-extension" data-category="connection">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">📦</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">데스크탑 확장</h3>
+            <span class="tip-card__en">Desktop Extension (.mcpb)</span>
+          </div>
+          <span class="tip-card__cat">연결</span>
+        </div>
+        <p class="tip-card__def">더블클릭으로 설치하는 MCP 서버 패키지.</p>
+        <p class="tip-card__analogy">앱 설치처럼 파일을 더블클릭하면 Claude에 기능이 추가됩니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p><code>.mcpb</code> 확장자 파일로 배포됩니다. 설치 시 Claude Desktop이 자동으로 MCP 서버를 구성합니다. 터미널·JSON 편집이 필요 없어 비개발자도 고급 MCP 서버를 사용할 수 있습니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-desktop/#setup" class="tip-card__link">데스크탑 세팅 보기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-api" data-category="connection">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">⚙️</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">API</h3>
+            <span class="tip-card__en">Application Programming Interface</span>
+          </div>
+          <span class="tip-card__cat">연결</span>
+        </div>
+        <p class="tip-card__def">소프트웨어끼리 통신하는 인터페이스.</p>
+        <p class="tip-card__analogy">레스토랑의 주문서입니다. 어떤 기능을 어떻게 요청하는지 규칙이 정해져 있습니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>Anthropic API를 통해 Claude를 직접 서비스나 앱에 통합할 수 있습니다. 이 가이드는 Claude 앱(웹/데스크탑/코드) 사용자를 위한 것이며, API 직접 통합은 <strong>docs.anthropic.com</strong>을 참고하세요.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── 자동화 ─────────────────────────────────── -->
+
+      <article class="tip-card" id="tip-cli" data-category="automation">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">💻</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">CLI</h3>
+            <span class="tip-card__en">Command Line Interface</span>
+          </div>
+          <span class="tip-card__cat">자동화</span>
+        </div>
+        <p class="tip-card__def">키보드로 명령을 입력하는 텍스트 기반 인터페이스.</p>
+        <p class="tip-card__analogy">마우스 없이 키보드로만 컴퓨터와 대화하는 방식입니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>macOS의 터미널, Windows의 PowerShell이 CLI 환경입니다. Claude Code CLI는 이 환경에서 <code>claude</code> 명령으로 실행합니다. 진입 장벽이 있지만 자동화·스크립팅에 가장 강력합니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-code/#start" class="tip-card__link">Claude Code 시작하기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-git" data-category="automation">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">🌿</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">git</h3>
+            <span class="tip-card__en">git</span>
+          </div>
+          <span class="tip-card__cat">자동화</span>
+        </div>
+        <p class="tip-card__def">코드 변경 이력을 관리하는 버전 관리 도구.</p>
+        <p class="tip-card__analogy">문서의 타임머신입니다. 언제든 과거 상태로 돌아갈 수 있습니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>Claude Code는 git과 긴밀하게 통합됩니다. 변경 사항 자동 커밋, PR 초안 작성, 브랜치 관리, 충돌 해결까지 자연어로 지시할 수 있습니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-code/#scenarios" class="tip-card__link">Claude Code 시나리오 보기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-pr" data-category="automation">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">🔀</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">PR (풀 리퀘스트)</h3>
+            <span class="tip-card__en">Pull Request</span>
+          </div>
+          <span class="tip-card__cat">자동화</span>
+        </div>
+        <p class="tip-card__def">코드 변경을 팀에 제안하는 요청.</p>
+        <p class="tip-card__analogy">"이 내용으로 수정했는데 검토해주세요"라고 동료에게 보내는 메시지입니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>GitHub, GitLab 등에서 사용하는 협업 워크플로우입니다. Claude Code가 코드를 수정한 후 PR 제목·설명·변경 이유를 자동으로 작성할 수 있습니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-code/#scenarios" class="tip-card__link">Claude Code 시나리오 보기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-cowork" data-category="automation">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">🖱️</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">Cowork</h3>
+            <span class="tip-card__en">Cowork</span>
+          </div>
+          <span class="tip-card__cat">자동화</span>
+        </div>
+        <p class="tip-card__def">AI가 화면을 보고 마우스·키보드로 앱을 직접 조작하는 기능.</p>
+        <p class="tip-card__analogy">AI가 옆에 앉아 직접 컴퓨터를 조작하는 것입니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>Claude Desktop 전용 기능. AI가 화면을 캡처해 현재 상태를 인식하고, 지정한 작업을 순서대로 수행합니다. 자동화 스크립트를 짜기 어려운 GUI 기반 앱(PPT, 포토샵, 레거시 시스템)에 유용합니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-desktop/#tabs" class="tip-card__link">데스크탑 탭 보기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-claude-md" data-category="automation">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">📄</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">CLAUDE.md</h3>
+            <span class="tip-card__en">CLAUDE.md</span>
+          </div>
+          <span class="tip-card__cat">자동화</span>
+        </div>
+        <p class="tip-card__def">프로젝트 규칙을 적어두는 파일 — Claude Code가 매 세션 자동으로 읽습니다.</p>
+        <p class="tip-card__analogy">Claude에게 "이 프로젝트에서 지켜야 할 규칙"을 미리 전달하는 메모입니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>프로젝트 루트에 <code>CLAUDE.md</code>를 만들면 Claude Code가 세션 시작 시 자동 로드합니다. 주요 활용: 규칙 ("원본 삭제 전 백업"), 금지 경로, 파일 명명 규칙, 응답 방식 지정. 비개발자도 텍스트 에디터로 작성할 수 있습니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-code/#harness" class="tip-card__link">하네스 세팅 보기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-sub-agent" data-category="automation">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">🤝</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">서브에이전트</h3>
+            <span class="tip-card__en">Sub-agent</span>
+          </div>
+          <span class="tip-card__cat">자동화</span>
+        </div>
+        <p class="tip-card__def">메인 Claude가 작업 일부를 별도 Claude 인스턴스에 위임하는 기능.</p>
+        <p class="tip-card__analogy">팀장이 팀원에게 업무를 배분하는 것입니다. 여러 작업을 동시에 진행할 수 있습니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>Claude Code에서 Task tool로 서브에이전트를 생성합니다. 컨텍스트가 격리되어 대규모 작업 (전체 코드베이스 감사, 여러 파일 동시 수정)을 병렬 처리합니다. 각 서브에이전트는 독립적인 컨텍스트 윈도우를 가집니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-code/#harness" class="tip-card__link">하네스 세팅 보기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-hooks" data-category="automation">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">🪝</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">hooks</h3>
+            <span class="tip-card__en">Hooks</span>
+          </div>
+          <span class="tip-card__cat">자동화</span>
+        </div>
+        <p class="tip-card__def">특정 이벤트에 자동으로 실행되는 명령.</p>
+        <p class="tip-card__analogy">특정 행동이 일어날 때 자동으로 켜지는 트리거입니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p><code>.claude/settings.json</code>의 <code>hooks</code> 배열에 정의합니다. 이벤트 종류: <strong>PreToolUse</strong> (도구 실행 전), <strong>PostToolUse</strong> (실행 후), <strong>Stop</strong> (세션 종료). 활용 예: 커밋 전 자동 린트, 세션 종료 시 변경 내역 요약 저장.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-code/#harness" class="tip-card__link">하네스 세팅 보기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-harness" data-category="automation">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">🔧</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">하네스</h3>
+            <span class="tip-card__en">Harness</span>
+          </div>
+          <span class="tip-card__cat">자동화</span>
+        </div>
+        <p class="tip-card__def">Claude를 감싸는 세팅 스캐폴딩 — CLAUDE.md, hooks, 권한 설정의 총합.</p>
+        <p class="tip-card__analogy">같은 트럭도 잘 정비된 트럭이 더 멀리, 더 안전하게 달립니다. 하네스는 Claude가 일관되고 안전하게 작동하도록 만드는 장치입니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>"하네스 엔지니어링"은 단발 프롬프트를 반복 가능한 워크플로우로 만드는 작업입니다. 구성 요소: <strong>CLAUDE.md</strong> (규칙 주입) + <strong>hooks</strong> (이벤트 자동화) + <strong>settings.json</strong> (권한 제어) + <strong>슬래시 커맨드</strong> (작업 표준화). 같은 모델도 하네스 설계에 따라 생산성이 크게 달라집니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-code/#harness" class="tip-card__link">하네스 세팅 보기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-slash-command" data-category="automation">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">⚡</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">슬래시 커맨드</h3>
+            <span class="tip-card__en">Slash Command</span>
+          </div>
+          <span class="tip-card__cat">자동화</span>
+        </div>
+        <p class="tip-card__def"><code>/명령어</code> 형태로 자주 쓰는 작업을 단축 실행하는 기능.</p>
+        <p class="tip-card__analogy">자주 쓰는 긴 문장을 단축키 하나에 저장해두는 것입니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p><code>.claude/commands/</code> 폴더에 마크다운 파일을 만들면 자동으로 등록됩니다. 예: <code>weekly-report.md</code> → <code>/weekly-report</code>로 보고서 자동 생성. 비개발자도 반복 작업을 자동화할 수 있습니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-code/#harness" class="tip-card__link">하네스 세팅 보기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-permission" data-category="automation">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">🛡️</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">권한 모드</h3>
+            <span class="tip-card__en">Permission Mode</span>
+          </div>
+          <span class="tip-card__cat">자동화</span>
+        </div>
+        <p class="tip-card__def">Claude Code가 어떤 도구를 자동 허용할지 제어하는 설정.</p>
+        <p class="tip-card__analogy">집에 들어온 사람이 어느 방까지 들어올 수 있는지 정해두는 것입니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p><code>.claude/settings.json</code>의 <code>allowedTools</code> (자동 허용)와 <code>dangerouslyAllowedTools</code> (위험 도구 자동 허용)로 설정합니다. 매번 승인 없이 Read만 허용하거나, 신뢰하는 작업에 Edit·Write·Bash까지 자동 허용할 수 있습니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-code/#harness" class="tip-card__link">하네스 세팅 보기 →</a>
+      </article>
+
+      <article class="tip-card" id="tip-ide" data-category="automation">
+        <div class="tip-card__header">
+          <span class="tip-card__icon" aria-hidden="true">🖥️</span>
+          <div class="tip-card__title-group">
+            <h3 class="tip-card__term">IDE</h3>
+            <span class="tip-card__en">Integrated Development Environment</span>
+          </div>
+          <span class="tip-card__cat">자동화</span>
+        </div>
+        <p class="tip-card__def">코드 편집기와 실행 환경을 통합한 개발 도구.</p>
+        <p class="tip-card__analogy">코딩을 위한 올인원 작업실입니다.</p>
+        <div class="disclosure">
+          <button class="disclosure__trigger" aria-expanded="false">
+            <svg class="disclosure__trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="disclosure__trigger-label">기술 상세</span>
+          </button>
+          <div class="disclosure__content">
+            <div class="disclosure__inner">
+              <p>VS Code와 JetBrains IDE에 Claude Code 확장을 설치하면 에디터 안에서 직접 Claude와 협업할 수 있습니다. 파일을 열어두고 질문하거나 수정을 지시하는 방식으로, 터미널보다 시각적인 환경에서 작업 가능합니다.</p>
+            </div>
+          </div>
+        </div>
+        <a href="../claude-code/#start" class="tip-card__link">Claude Code 시작하기 →</a>
+      </article>
+
+    </div><!-- /.tip-grid -->
+
   </section>
+
 </main>
 
 <footer class="footer">
@@ -84,7 +741,8 @@
     <p>
       <a href="https://github.com/yuujj/claude-guide">GitHub</a> ·
       <a href="https://claude.ai">claude.ai</a> ·
-      <a href="../tip/">TIP</a>
+      <a href="../tip/">TIP</a> ·
+      <span style="color:var(--color-text-muted)">v0.7.0</span>
     </p>
   </div>
 </footer>

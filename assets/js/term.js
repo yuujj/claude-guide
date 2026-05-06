@@ -40,10 +40,11 @@ export function initTerm() {
     if (!popover) {
       const def = term.dataset.def || '';
       const tipId = term.dataset.tip || '';
-      // 현재 페이지 깊이에 따라 상대경로 결정
-      const depth = (location.pathname.match(/\//g) || []).length;
-      const prefix = depth > 2 ? '../' : '';
-      const linkHref = tipId ? `${prefix}tip/#${tipId}` : `${prefix}tip/`;
+      // main.css의 상대 경로로 사이트 루트 prefix를 계산 (depth 독립적, GitHub Pages 호환)
+      const cssLink = document.querySelector('link[href*="main.css"]');
+      const cssHref = cssLink?.getAttribute('href') || 'assets/css/main.css';
+      const tipBase = cssHref.replace('assets/css/main.css', '') + 'tip/';
+      const linkHref = tipId ? `${tipBase}#tip-${tipId}` : tipBase;
 
       popover = document.createElement('div');
       popover.className = 'term-popover';
